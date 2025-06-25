@@ -40,7 +40,7 @@ export const handler = async (event: any, context: any) => {
     const emailHtml = `
       <!DOCTYPE html>
       <html>
-        <head> 
+        <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Your Free Resource from QuantEdgeB</title>
@@ -112,7 +112,7 @@ export const handler = async (event: any, context: any) => {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'QuantEdgeB <onboarding@resend.dev>',
+      from: 'QuantEdgeB <noreply@quantedgeb.com>',
       to: [email],
       subject: `Your Free Resource: ${title}`,
       html: emailHtml,
