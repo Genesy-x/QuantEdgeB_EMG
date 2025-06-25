@@ -112,7 +112,7 @@ export const handler = async (event: any, context: any) => {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: 'QuantEdgeB <noreply@quantedgeb.co>',
+      from: 'QuantEdgeB <onboarding@resend.dev>',
       to: [email],
       subject: `Your Free Resource: ${title}`,
       html: emailHtml,
