@@ -49,7 +49,7 @@ export const handler = async (event: any) => {
     }
 
     await resend.emails.send({
-      from: 'QuantEdgeB <noreply@quantedgeb.com>', // Use verified domain
+      from: 'QuantEdgeB <noreply@quantedgeb.co>', // Use verified domain
       to: [email],
       subject: `Your Free Download: ${title}`,
       html: `
