@@ -9,7 +9,7 @@ function AlphaPlanPage() {
     {
       title: "Everything in Fundamental",
       description: "Macro dashboards. On-chain cycles. Sentiment regimes. Education, frameworks, and structure to build your analytical foundation the right way.",
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/4_jsfeln.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Value_Suite.webp",
       features: [
         "On-Chain & Macro Dashboards",
         "Breadth & Regime Filters",
