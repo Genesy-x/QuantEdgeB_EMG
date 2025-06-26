@@ -108,7 +108,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
         <>
         Comprehensive rotation and relative strength systems designed to optimize portfolio allocation and identify emerging opportunities. These tools help you stay ahead of market rotations and capitalize on strength-based momentum shifts.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/5_xaagvd.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749059061/QuantEdgeB_Crypto_Trading_Major_Sync.png",
       features: [
         "Spectra RS Inferno",
         "Altitude Alpha", 
