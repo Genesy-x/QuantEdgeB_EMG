@@ -40,7 +40,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
         <>
         Built for traders who need <strong>tactical precision</strong> and real-time execution clarity.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/6_uudnl6.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749072258/QuantEdgeB_Crypto_Trading_Trading_Suite_2.png",
       features: [
         <>
         Everything in Premium —&nbsp; <em> full foundation + advanced systems</em>
