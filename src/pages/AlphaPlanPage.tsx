@@ -21,7 +21,7 @@ function AlphaPlanPage() {
     {
       title: "Everything in Premium+",
       description: "Full-spectrum active trading systems coupled with advanced relative strength and capital flow tools. Outperformance becomes the bare minimum.",
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/5_xaagvd.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749072194/QuantEdgeB_Crypto_Trading_ALTS_RSPS.png",
       features: [
         "TradingSuite",
         "MultiEdgeSuite",
