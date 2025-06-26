@@ -102,7 +102,6 @@ export const Pricing: React.FC = () => {
             "Everything in Premium",
             "Advanced Trading Systems",
             "Asset Based Strategies",
-            "Tailored Strategies",
             "Priority Support"
           ]
         },
