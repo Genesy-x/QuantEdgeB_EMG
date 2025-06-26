@@ -1,11 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GlowingEffect } from '../components/ui/glowing-effect';
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '../components/ui/carousel';
+import { Button } from '../components/ui/button';
 
 export const WhyChoosingQuantEdgeB: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   
   const reasons = [
     {
@@ -44,35 +48,22 @@ export const WhyChoosingQuantEdgeB: React.FC = () => {
       glowColor: 'purple' as const
     }
   ];
-  
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === reasons.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-  
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? reasons.length - 1 : prevIndex - 1
-    );
-  };
-  
-  const resetTimeout = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-  
+
   useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(() => {
-      nextSlide();
-    }, 9000);
-    
-    return () => {
-      resetTimeout();
+    if (!carouselApi) {
+      return;
+    }
+    const updateSelection = () => {
+      setCanScrollPrev(carouselApi.canScrollPrev());
+      setCanScrollNext(carouselApi.canScrollNext());
+      setCurrentSlide(carouselApi.selectedScrollSnap());
     };
-  }, [currentIndex]);
+    updateSelection();
+    carouselApi.on("select", updateSelection);
+    return () => {
+      carouselApi.off("select", updateSelection);
+    };
+  }, [carouselApi]);
   
   return (
     <section id="why-choosing" className="py-20 px-4 relative">
@@ -87,79 +78,91 @@ export const WhyChoosingQuantEdgeB: React.FC = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto">
-          <div className="overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                layout
-                key={currentIndex}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="w-full min-h-[350px] md:min-h-[400px]"
-              >
-                <div className="relative h-full rounded-2xl border-[0.75px] border-gray-800 p-0.5">
-                  <GlowingEffect
-                    spread={40}
-                    glow={true}
-                    disabled={false}
-                    proximity={64}
-                    inactiveZone={0.01}
-                    borderWidth={2}
-                  />
-                  <div className="relative h-full flex flex-col bg-gray-900/60 backdrop-blur-sm rounded-[10px] p-8 md:p-12">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                      {reasons[currentIndex].title}
-                    </h3>
-                    <p className="text-gray-200 text-lg md:text-xl italic mb-6 leading-relaxed">
-                      {reasons[currentIndex].testimonial}
-                    </p>
-                    <p className="text-gray-400 text-sm mb-6">
-                      – {reasons[currentIndex].author}
-                    </p>
-                    <p className="text-gray-300 text-lg leading-relaxed">
-                      {reasons[currentIndex].body}
-                    </p>
-                    <div className="flex items-center justify-between mt-8">
-                      <div className="flex gap-2">
-                        {reasons.map((_, index) => (
-                          <button
-                            key={index}
-                            className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                              index === currentIndex 
-                                ? 'bg-gradient-to-r from-blue-400 to-blue-700 w-6' 
-                                : 'bg-gray-600 hover:bg-gray-500'
-                            }`}
-                            onClick={() => setCurrentIndex(index)}
-                            aria-label={`Go to slide ${index + 1}`}
-                          />
-                        ))}
+          <Carousel
+            setApi={setCarouselApi}
+            opts={{
+              loop: true,
+              dragFree: true,
+            }}
+          >
+            <CarouselContent>
+              {reasons.map((reason, index) => (
+                <CarouselItem key={index}>
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="w-full min-h-[350px] md:min-h-[400px]"
+                  >
+                    <div className="relative h-full rounded-2xl border-[0.75px] border-gray-800 p-0.5">
+                      <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
+                        borderWidth={2}
+                      />
+                      <div className="relative h-full flex flex-col bg-gray-900/60 backdrop-blur-sm rounded-[10px] p-8 md:p-12">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                          {reason.title}
+                        </h3>
+                        <p className="text-gray-200 text-lg md:text-xl italic mb-6 leading-relaxed">
+                          {reason.testimonial}
+                        </p>
+                        <p className="text-gray-400 text-sm mb-6">
+                          – {reason.author}
+                        </p>
+                        <p className="text-gray-300 text-lg leading-relaxed">
+                          {reason.body}
+                        </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
           
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-3 rounded-full 
-                     bg-gray-900/80 hover:bg-gray-800/80 backdrop-blur-sm transition-colors
-                     border border-gray-700 hover:border-gray-600 group"
-            aria-label="Previous reason"
-          >
-            <ChevronLeft className="h-6 w-6 text-gray-400 group-hover:text-white transition-colors" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-3 rounded-full 
-                     bg-gray-900/80 hover:bg-gray-800/80 backdrop-blur-sm transition-colors
-                     border border-gray-700 hover:border-gray-600 group"
-            aria-label="Next reason"
-          >
-            <ChevronRight className="h-6 w-6 text-gray-400 group-hover:text-white transition-colors" />
-          </button>
+          {/* Navigation arrows positioned at middle bottom */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => carouselApi?.scrollPrev()}
+              disabled={!canScrollPrev}
+              className="h-10 w-10 rounded-full bg-gray-900/80 hover:bg-gray-800/80 backdrop-blur-sm transition-colors border border-gray-700 hover:border-gray-600 disabled:opacity-50"
+            >
+              <ChevronLeft className="h-5 w-5 text-gray-400" />
+            </Button>
+            
+            {/* Dots indicator */}
+            <div className="flex gap-2">
+              {reasons.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                    index === currentSlide 
+                      ? 'bg-gradient-to-r from-blue-400 to-blue-700 w-6' 
+                      : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                  onClick={() => carouselApi?.scrollTo(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => carouselApi?.scrollNext()}
+              disabled={!canScrollNext}
+              className="h-10 w-10 rounded-full bg-gray-900/80 hover:bg-gray-800/80 backdrop-blur-sm transition-colors border border-gray-700 hover:border-gray-600 disabled:opacity-50"
+            >
+              <ChevronRight className="h-5 w-5 text-gray-400" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
