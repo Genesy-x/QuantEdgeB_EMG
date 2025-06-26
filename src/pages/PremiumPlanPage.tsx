@@ -65,7 +65,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
         <>
         Advanced technical analysis engines designed for precision execution and market timing. These sophisticated tools provide the edge you need for successful day and swing trading with adaptable logic that responds to changing market conditions.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/4_jsfeln.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
       features: [
         "Adaptive Pulsar Momentum",
         "MA Thrust Engineer",
