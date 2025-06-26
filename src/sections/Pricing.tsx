@@ -109,8 +109,8 @@ export const Pricing: React.FC = () => {
           name: "MajorRotation Suite",
           features: [
             "Everything in Premium",
-            "Asset Rotation Strategies",
-            "Tailored Rotation System",
+            "Advanced Relative Strength Systems",
+            "Asset Rotation Strategies",            
             "Priority Support"
           ]
         }
