@@ -37,7 +37,7 @@ function AlphaPlanPage() {
         Get access to <strong> private educational modules </strong> that break down the core of every system.
 Learn the <em> "why" </em> behind every signal—not just how to use it, but how it <em> thinks </em>."
           </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/7_xrvzwp.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1750959396/QuantEdgeB_Crypto_Trading_System_Detailed.webp",
       features: [
         "Model logic & trade intent",
         "Design philosophy & structure",
