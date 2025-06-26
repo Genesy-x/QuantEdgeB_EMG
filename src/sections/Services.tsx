@@ -1,10 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { GlareCard } from '../components/ui/glare-card';
 import { Link } from 'react-router-dom';
-
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '../components/ui/carousel';
+import { Button } from '../components/ui/button';
 
 const services = [
   {
@@ -39,40 +38,27 @@ const services = [
   }
 ];
 
-
 export const Services: React.FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      align: 'start',
-      skipSnaps: false,
-    },
-    [Autoplay({ delay: 4000, stopOnInteraction: false })]
-  );
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
+    if (!carouselApi) {
+      return;
+    }
+    const updateSelection = () => {
+      setCanScrollPrev(carouselApi.canScrollPrev());
+      setCanScrollNext(carouselApi.canScrollNext());
+      setCurrentSlide(carouselApi.selectedScrollSnap());
     };
-  }, [emblaApi, onSelect]);
+    updateSelection();
+    carouselApi.on("select", updateSelection);
+    return () => {
+      carouselApi.off("select", updateSelection);
+    };
+  }, [carouselApi]);
 
   return (
     <section id="services" className="py-20 px-4 relative overflow-hidden">
@@ -90,63 +76,83 @@ export const Services: React.FC = () => {
         </div>
 
         <div className="relative">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-4">
+          <Carousel
+            setApi={setCarouselApi}
+            opts={{
+              loop: true,
+              align: 'start',
+              dragFree: true,
+              breakpoints: {
+                "(max-width: 768px)": {
+                  dragFree: true,
+                },
+              },
+            }}
+          >
+            <CarouselContent className="-ml-4">
               {services.map((service, index) => (
-                <div key={index} className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_45%] md:flex-[0_0_30%]">
+                <CarouselItem key={index} className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_45%] md:flex-[0_0_30%]">
                   <Link to="/products">
-  <GlareCard className="relative group cursor-pointer h-[240px] md:h-[320px]">
-    <img
-      src={service.image}
-      alt={service.title}
-      className="absolute inset-0 w-full h-full object-cover"
-    />
-    <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
-        {service.title}
-      </h3>
-      <p className="text-gray-300 text-sm">
-        {service.description}
-      </p>
-    </div>
-  </GlareCard>
-</Link>
+                    <GlareCard className="relative group cursor-pointer h-[240px] md:h-[320px]">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-300 text-sm">
+                          {service.description}
+                        </p>
+                      </div>
+                    </GlareCard>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
 
-                </div>
+          {/* Navigation arrows positioned at middle bottom */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => carouselApi?.scrollPrev()}
+              disabled={!canScrollPrev}
+              className="h-10 w-10 rounded-full bg-gray-900/80 hover:bg-gray-800/80 backdrop-blur-sm transition-colors border border-gray-700 hover:border-gray-600 disabled:opacity-50"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-5 w-5 text-gray-400" />
+            </Button>
+            
+            {/* Dots indicator */}
+            <div className="flex gap-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                    index === currentSlide 
+                      ? 'bg-gradient-to-r from-blue-400 to-blue-700 w-6' 
+                      : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                  onClick={() => carouselApi?.scrollTo(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               ))}
             </div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={scrollPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 backdrop-blur-sm hover:bg-black/70 transition-colors text-white"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 backdrop-blur-sm hover:bg-black/70 transition-colors text-white"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {services.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === selectedIndex 
-                    ? 'bg-blue-500 w-4' 
-                    : 'bg-gray-600 hover:bg-gray-500'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-                onClick={() => emblaApi?.scrollTo(index)}
-              />
-            ))}
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => carouselApi?.scrollNext()}
+              disabled={!canScrollNext}
+              className="h-10 w-10 rounded-full bg-gray-900/80 hover:bg-gray-800/80 backdrop-blur-sm transition-colors border border-gray-700 hover:border-gray-600 disabled:opacity-50"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5 text-gray-400" />
+            </Button>
           </div>
         </div>
       </div>
