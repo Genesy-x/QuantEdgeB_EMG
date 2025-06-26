@@ -33,7 +33,7 @@ function DocumentationPage() {
 Try out these <b>free indicators</b> and get a taste of the QuantEdgeB expertise.<br/>
         We will be waiting for you on the other side.
         </>,
-      image: 'https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/6_uudnl6.webp',
+      image: 'https://res.cloudinary.com/dq4flimtm/image/upload/v1749058955/QuantEdgeB_Crypto_Trading_Basic_1.png',
       downloadUrl: 'https://tradinglibrary.carrd.co',
       category: 'indicator'
     },
