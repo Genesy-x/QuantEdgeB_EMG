@@ -132,7 +132,7 @@ export const Pricing: React.FC = () => {
         "Everything in Premium+",
         "TradingSuite package",
         "MultiEdgeSuite package ",
-        "Personalised Systems",
+        "Personalised System Requests",
         "System Deep Dive Lessons",
         "1-on-1 Mentorship"
       ],
