@@ -51,8 +51,15 @@ export const Hero: React.FC = () => {
               as="span"
               duration={3.5}
               spread={2}
-              className="ml-2 italic font-bold text-3xl md:text-4xl [--base-color:theme(colors.blue.800)] [--base-gradient-color:theme(colors.purple.300)] dark:[--base-color:theme(colors.blue.600)] dark:[--base-gradient-color:theme(colors.white)]" 
-            >
+              className="ml-2 italic font-bold text-3xl md:text-4xl     
+    text-transparent 
+    bg-clip-text 
+    bg-gradient-to-r 
+    from-blue-300 
+    to-blue-800 
+    dark:from-blue-400 
+    dark:to-blue-600"
+>
               Easy
             </TextShimmer>
           </p>
