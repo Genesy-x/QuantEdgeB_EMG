@@ -42,10 +42,10 @@ export const Hero: React.FC = () => {
   <BlurIn
     word="QuantEdgeB"
     className="metallic-text text-7xl md:text-9xl pb-4 font-bold tracking-tight"
-    duration={1.0}
+    duration={1.0} 
   />
   
-  <p className="text-3xl md:text-6xl mt-8 whitespace-nowrap flex justify-center">
+  <p className="text-3xl md:text-4xl mt-8 whitespace-nowrap flex justify-center">
     <span className="text-gray-300">Trading Made</span>
     
     <TextShimmer
