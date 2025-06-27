@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
     duration={1.0}
   />
   
-  <p className="text-3xl md:text-4xl mt-8 whitespace-nowrap flex justify-center">
+  <p className="text-3xl md:text-6xl mt-8 whitespace-nowrap flex justify-center">
     <span className="text-gray-300">Trading Made</span>
     
     <TextShimmer
