@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
       as="span"
       duration={3.5} 
       spread={3}
-      className="ml-2 italic font-bold text-transparent bg-clip-text 
+      className="ml-2 pr-1 italic font-bold text-transparent bg-clip-text 
                  bg-gradient-to-r from-blue-400 to-blue-800 
                  dark:from-blue-500 dark:to-blue-300 
                  text-3xl md:text-4xl"
