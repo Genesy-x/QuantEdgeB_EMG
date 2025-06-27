@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
           <div className="flex justify-between items-center py-4">
             <Link to="/" className="flex items-center">
               <img src="https://res.cloudinary.com/dq4flimtm/image/upload/v1749311877/G-removebg-preview_lrikjg.webp" alt="QuantEdgeB Logo" className="h-16 w-16 mr-1" />
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 QuantEdgeB
               </span>
             </Link>
