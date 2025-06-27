@@ -43,14 +43,14 @@ export const Hero: React.FC = () => {
     word="QuantEdgeB"
     className="metallic-text text-7xl md:text-9xl pb-4 font-bold tracking-tight"
     duration={1.0}
-  /> 
+  />
   
-  <p className="text-3xl md:text-4xl px-1 whitespace-nowrap flex justify-center">
+  <p className="text-3xl md:text-4xl mt-8 whitespace-nowrap flex justify-center">
     <span className="text-gray-300">Trading Made</span>
     
     <TextShimmer
       as="span"
-      duration={3.5}
+      duration={3.5} 
       spread={3}
       className="ml-2 mt-8 italic font-bold text-transparent bg-clip-text 
                  bg-gradient-to-r from-blue-400 to-blue-800 
