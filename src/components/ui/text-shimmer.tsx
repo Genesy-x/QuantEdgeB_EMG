@@ -30,7 +30,7 @@ export function TextShimmer({
     'relative inline-block bg-[length:250%_100%,auto] bg-clip-text text-transparent',
     '[--base-color:theme(colors.blue.400)] [--base-gradient-color:theme(colors.blue.800)]',
     '[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-gradient-color),#0000_calc(50%+var(--spread)))] [background-repeat:no-repeat,padding-box]',
-    'dark:[--base-color:theme(colors.blue.700)] dark:[--base-gradient-color:theme(colors.blue.100)]',
+    'dark:[--base-color:theme(colors.blue.300-to-blue.700)] dark:[--base-gradient-color:theme(colors.white)]',
     'dark:[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-gradient-color),#0000_calc(50%+var(--spread)))]',
     className
   )}
