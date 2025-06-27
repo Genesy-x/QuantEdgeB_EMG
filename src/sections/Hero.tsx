@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { RainbowButton } from '../components/ui/rainbow-button';
 import { BlurIn } from '../components/ui/blur-in';
+import { TextShimmer } from '../components/ui/text-shimmer';
 
 export const Hero: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -44,8 +45,16 @@ export const Hero: React.FC = () => {
             duration={1.}
           />
           
-          <p className="text-2xl md:text-3xl text-gray-300 mt-8 whitespace-nowrap flex justify-center">
-            Trading Made Easy
+          <p className="text-3xl md:text-4xl text-gray-300 mt-8 whitespace-nowrap flex justify-center">
+            Trading Made{' '}
+            <TextShimmer
+              as="span"
+              duration={2.5}
+              spread={3}
+              className="ml-2 italic font-bold text-3xl md:text-4xl [--base-color:theme(colors.blue.400)] [--base-gradient-color:theme(colors.blue.100)] dark:[--base-color:theme(colors.blue.500)] dark:[--base-gradient-color:theme(colors.white)]"
+            >
+              Easy
+            </TextShimmer>
           </p>
         </div>
         
