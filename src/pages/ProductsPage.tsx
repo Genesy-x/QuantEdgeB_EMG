@@ -24,7 +24,7 @@ function ProductsPage() {
       title: "Long-Term Valuation",
       description: <>
       A hybrid model blending macro fundamentals, sentiment data, and technical filters — built to identify <strong>deep value zones</strong> and <strong>early accumulation</strong> ranges. <br/>
-        Whether you’re DCA’ing or building core positions, this model helps you buy <strong>conviction</strong>, not <em>hype</em>.
+        Whether you're DCA'ing or building core positions, this model helps you buy <strong>conviction</strong>, not <em>hype</em>.
         </>,
       image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Long_Term_Valuation.webp",
       features: [
@@ -50,8 +50,8 @@ function ProductsPage() {
     {
       title: "Portfolio Pro",
       description: <>
-      Portfolio Pro is your portfolio’s autopilot — dynamically balancing exposure, correlations, and volatility across positions. <br/>
-        Whether you’re <em>passive</em> or <em>active</em>, this system keeps your risk distribution <strong>efficient</strong> and <strong>responsive</strong>.
+      Portfolio Pro is your portfolio's autopilot — dynamically balancing exposure, correlations, and volatility across positions. <br/>
+        Whether you're <em>passive</em> or <em>active</em>, this system keeps your risk distribution <strong>efficient</strong> and <strong>responsive</strong>.
         </>,
       image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
       features: [
@@ -138,17 +138,17 @@ function ProductsPage() {
               </div>
 
               <div className="w-full lg:w-1/2">
-                <h2 className="text-3xl font-bold mb-4 text-white">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                   {product.title}
                 </h2>
-                <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                   {product.description}
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-8">
                   {product.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      {feature}
+                    <li key={idx} className="flex items-start text-gray-300 text-base md:text-lg leading-relaxed">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-4 mt-2 flex-shrink-0"></span>
+                      <span className="flex-1">{feature}</span>
                     </li>
                   ))}
                 </ul>

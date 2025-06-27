@@ -141,7 +141,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-100">
             Your System for Strategy, Timing & Long-Term Edge
           </h2>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
           <span className = "font-semibold italic"> You've got the basics down. Now it's time to start thinking like a pro. </span> 
             <br/><br/>
 The Premium Tier gives you <span className = "font-bold"> cycle-level </span> vision and <span className = "font-bold"> tactical-level </span> control. 
@@ -168,7 +168,7 @@ See when to enter, exit, rotate, and why — across any asset, any timeframe.
             <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-200">
               Your Tactical Shift, From Understanding to Systemizing
             </h3>
-            <p className="text-gray-300 max-w-4xl mx-auto text-lg leading-relaxed">
+            <p className="text-gray-300 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
               Time to level up — <strong> embrace the systematic framework.</strong>
 <br/><br/>
 
@@ -204,17 +204,17 @@ Get the tools to track cycles, time entries, rotate assets, and build dynamic po
                 </div>
 
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-3xl font-bold mb-4 text-white">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                     {section.title}
                   </h3>
-                  <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                  <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                     {section.description}
                   </p>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-4 mb-8">
                     {section.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-300">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                        {feature}
+                      <li key={idx} className="flex items-start text-gray-300 text-base md:text-lg leading-relaxed">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-4 mt-2 flex-shrink-0"></span>
+                        <span className="flex-1">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -248,7 +248,7 @@ Get the tools to track cycles, time entries, rotate assets, and build dynamic po
             <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-200">
               Full-Spectrum Technical Strategy Engine 
             </h3>
-            <p className="text-gray-300 max-w-4xl mx-auto text-lg leading-relaxed">
+            <p className="text-gray-300 max-w-4xl mx-auto text-base md:text-lg leading-relaxed">
               This one's for the <strong> technician at heart. </strong> <br/><br/>
 The TradingSuite unlocks a custom-built strategy engine for <strong> active day and swing traders </strong>, with tools that help you catch fast moves, adjust mid-cycle, and execute with serious confidence.
             </p>
@@ -279,17 +279,17 @@ The TradingSuite unlocks a custom-built strategy engine for <strong> active day 
                 </div>
 
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-3xl font-bold mb-4 text-white">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                     {section.title}
                   </h3>
-                  <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                  <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                     {section.description}
                   </p>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-4 mb-8">
                     {section.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-300">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                        {feature}
+                      <li key={idx} className="flex items-start text-gray-300 text-base md:text-lg leading-relaxed">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-4 mt-2 flex-shrink-0"></span>
+                        <span className="flex-1">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -323,7 +323,7 @@ The TradingSuite unlocks a custom-built strategy engine for <strong> active day 
             <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-200">
               Trade Like Strength Always Wins <em> (Because It Does) </em>
             </h3>
-            <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
               This one's for the <strong> allocation masters and cycle readers. </strong> <br/><br/>
 The MajorRotation Suite helps you stay in the winners and rotate out of the weak — <em>fast.</em> <br/><br/>
 <strong>Follow flows. Spot leaders. Allocate with logic.</strong>
@@ -355,17 +355,17 @@ The MajorRotation Suite helps you stay in the winners and rotate out of the weak
                 </div>
 
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-3xl font-bold mb-4 text-white">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                     {section.title}
                   </h3>
-                  <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                  <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                     {section.description}
                   </p>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-4 mb-8">
                     {section.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-300">
-                        <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                        {feature}
+                      <li key={idx} className="flex items-start text-gray-300 text-base md:text-lg leading-relaxed">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full mr-4 mt-2 flex-shrink-0"></span>
+                        <span className="flex-1">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -394,7 +394,7 @@ The MajorRotation Suite helps you stay in the winners and rotate out of the weak
         >
           <div className="bg-black-900/60 backdrop-blur-sm rounded-xl border border-gray-800 overflow-hidden">
             <div className="p-8">
-              <h3 className="text-3xl font-bold mb-8 text-center text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-white">
                 Premium vs. Premium+
               </h3>
               
@@ -402,26 +402,26 @@ The MajorRotation Suite helps you stay in the winners and rotate out of the weak
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-gray-700">
-                      <th className="text-center py-4 px-6 text-xl font-bold text-white">Tier</th>
-                      <th className="text-center py-4 px-6 text-xl font-bold text-white">Best For</th>
-                      <th className="text-center py-4 px-6 text-xl font-bold text-white">What It Adds</th>
+                      <th className="text-center py-4 px-6 text-lg md:text-xl font-bold text-white">Tier</th>
+                      <th className="text-center py-4 px-6 text-lg md:text-xl font-bold text-white">Best For</th>
+                      <th className="text-center py-4 px-6 text-lg md:text-xl font-bold text-white">What It Adds</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-gray-800">
-                      <td className="py-6 px-6 text-lg font-semibold text-blue-400">Premium</td>
-                      <td className="py-6 px-6 text-gray-200">Serious traders who want macro/micro clarity and confidence</td>
-                      <td className="py-6 px-6 text-gray-200">Universal systems for timing, value, and strategy</td>
+                      <td className="py-6 px-6 text-base md:text-lg font-semibold text-blue-400">Premium</td>
+                      <td className="py-6 px-6 text-gray-200 text-sm md:text-base">Serious traders who want macro/micro clarity and confidence</td>
+                      <td className="py-6 px-6 text-gray-200 text-sm md:text-base">Universal systems for timing, value, and strategy</td>
                     </tr>
                     <tr className="border-b border-gray-800">
-                      <td className="py-6 px-6 text-lg font-semibold text-green-400">TradingSuite</td>
-                      <td className="py-6 px-6 text-gray-200">Day & swing traders who want <strong>precision execution tools</strong></td>
-                      <td className="py-6 px-6 text-gray-200">Tactical models for momentum, volatility, and regime shifts</td>
+                      <td className="py-6 px-6 text-base md:text-lg font-semibold text-green-400">TradingSuite</td>
+                      <td className="py-6 px-6 text-gray-200 text-sm md:text-base">Day & swing traders who want <strong>precision execution tools</strong></td>
+                      <td className="py-6 px-6 text-gray-200 text-sm md:text-base">Tactical models for momentum, volatility, and regime shifts</td>
                     </tr>
                     <tr>
-                      <td className="py-6 px-6 text-lg font-semibold text-purple-400">MultiEdgeSuite</td>
-                      <td className="py-6 px-6 text-gray-200">Portfolio builders optimizing for <strong>strength-based allocation</strong></td>
-                      <td className="py-6 px-6 text-gray-200">Full asset rotation & alpha mapping ecosystem</td>
+                      <td className="py-6 px-6 text-base md:text-lg font-semibold text-purple-400">MultiEdgeSuite</td>
+                      <td className="py-6 px-6 text-gray-200 text-sm md:text-base">Portfolio builders optimizing for <strong>strength-based allocation</strong></td>
+                      <td className="py-6 px-6 text-gray-200 text-sm md:text-base">Full asset rotation & alpha mapping ecosystem</td>
                     </tr>
                   </tbody>
                 </table>

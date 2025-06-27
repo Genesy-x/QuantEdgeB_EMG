@@ -154,7 +154,7 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
       title: "Mathematical Rigor",
       content: (
         <div>
-          <p className="text-gray-200 text-sm md:text-2xl font-normal mb-4 leading-relaxed">
+          <p className="text-gray-200 text-base md:text-2xl font-normal mb-4 leading-relaxed">
             Every tool is built from <strong>quantitative theory:</strong> <br/> Probability, stochastic modeling, fractals, entropy, and beyond.
           </p>
         </div>
@@ -164,7 +164,7 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
       title: "Data-First Architecture",
       content: (
         <div>
-          <p className="text-gray-200 text-sm md:text-2xl font-normal mb-4 leading-relaxed">
+          <p className="text-gray-200 text-base md:text-2xl font-normal mb-4 leading-relaxed">
             We process <strong>millions</strong> of ticks, <strong>normalize</strong> across regimes, and <strong>stress-test</strong> signals under chaos.
             So you're prepared for <em><strong>anything</strong></em>.
           </p>
@@ -175,7 +175,7 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
       title: "Statistical Validation",
       content: (
         <div>
-          <p className="text-gray-200 text-sm md:text-2xl font-normal mb-4 leading-relaxed">
+          <p className="text-gray-200 text-base md:text-2xl font-normal mb-4 leading-relaxed">
             <em>Backtests. Walk-forwards. Monte Carlo.</em>
             <br/> Every signal earns its place with <strong>hard stats</strong> and <strong>no shortcuts</strong>.
           </p>
@@ -186,7 +186,7 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
       title: "Algorithmic Velocity",
       content: (
         <div>
-          <p className="text-gray-200 text-sm md:text-2xl font-normal mb-4 leading-relaxed">
+          <p className="text-gray-200 text-base md:text-2xl font-normal mb-4 leading-relaxed">
             New models drop <strong>monthly</strong>. <br/>
             We adapt faster than the market changes — <em>and so will <strong>you</strong>.</em>
           </p>
@@ -197,7 +197,7 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
       title: "Trader-Driven Evolution",
       content: (
         <div>
-          <p className="text-gray-200 text-sm md:text-2xl font-normal mb-4 leading-relaxed">
+          <p className="text-gray-200 text-base md:text-2xl font-normal mb-4 leading-relaxed">
             You're not just a <em>user</em>. Your feedback <strong>shapes</strong> our roadmap. 
             <br/> <strong>Real-world performance</strong> drives what we build next.
           </p>
@@ -208,7 +208,7 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
       title: "Transparent Logic",
       content: (
         <div>
-          <p className="text-gray-200 text-sm md:text-2xl font-normal mb-4 leading-relaxed">
+          <p className="text-gray-200 text-base md:text-2xl font-normal mb-4 leading-relaxed">
             No black boxes. We break down the <em>"why"</em> and <em>"how"</em> behind every signal — so you can think like a <strong>system creator</strong>, not just a user.
           </p>
         </div>
@@ -266,16 +266,16 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
               </div>
 
               <div className="w-full lg:w-1/2">
-                <h2 className="text-3xl font-bold mb-4 text-white">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                   {section.title}
                 </h2>
-                <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                   {section.description}
                 </p>
                 {section.features.length > 0 && (
                   <ul className="space-y-3 mb-8">
                     {section.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-300">
+                      <li key={idx} className="flex items-center text-gray-300 text-base md:text-lg">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
                         {feature}
                       </li>

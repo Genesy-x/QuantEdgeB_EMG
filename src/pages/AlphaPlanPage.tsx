@@ -88,7 +88,7 @@ Get <strong>direct sessions</strong> with the creator — to tweak, refine, adap
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-300">
             Mastery, Tailored<br/> 
           </h2>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Alpha is where the noise stops. <strong> More power, more control, more clarity.</strong><br/><br/>
 
 From long-term cycle vision to real-time trade execution, this is the <strong> <em>full QuantEdgeB arsenal</em></strong>:<br/>
@@ -124,17 +124,17 @@ See the market like an <strong>architect</strong> — and act like a <strong>pro
               </div>
 
               <div className="w-full lg:w-1/2">
-                <h2 className="text-3xl font-bold mb-4 text-white">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                   {section.title}
                 </h2>
-                <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                   {section.description}
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-8">
                   {section.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      {feature}
+                    <li key={idx} className="flex items-start text-gray-300 text-base md:text-lg leading-relaxed">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-4 mt-2 flex-shrink-0"></span>
+                      <span className="flex-1">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -159,10 +159,10 @@ See the market like an <strong>architect</strong> — and act like a <strong>pro
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-32 text-center bg-gray-900/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
         >
-          <h3 className="text-2xl font-bold mb-4 text-white">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
             Who Is Alpha For?
           </h3>
-          <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto">
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
             You're serious about <strong> mastering </strong>the game.<br/><br/>
 Not just <em> using </em> tools, but <strong>understanding</strong> systems, <strong>designing</strong> strategies, and <strong> executing </strong> with conviction.<br/><br/>
 You want the <strong>full picture </strong>: <em>fundamentals, flow, execution, structure, and support.</em><br/><br/>

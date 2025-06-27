@@ -118,7 +118,7 @@ function FundamentalPlanPage() {
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-100">
             Your Core System for Smarter Crypto Moves
           </h2>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
       <span className="font-semibold italic">This is where serious traders start.</span>
       <br /><br />
     The Fundamental Tier gives you a clear framework to understand the market, manage risk, and start trading with 
@@ -155,17 +155,17 @@ function FundamentalPlanPage() {
               </div>
 
               <div className="w-full lg:w-1/2">
-                <h2 className="text-3xl font-bold mb-4 text-white">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                   {section.title}
                 </h2>
-                <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                <p className="text-gray-200 mb-6 text-base md:text-lg leading-relaxed">
                   {section.description}
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-4 mb-8">
                   {section.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      {feature}
+                    <li key={idx} className="flex items-start text-gray-300 text-base md:text-lg leading-relaxed">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-4 mt-2 flex-shrink-0"></span>
+                      <span className="flex-1">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -190,10 +190,10 @@ function FundamentalPlanPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-32 text-center bg-gray-900/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
         >
-          <h3 className="text-3xl font-bold mb-4 text-white">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
             Who Is This For?
           </h3>
-          <p className="text-gray-200 text-2xl text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
             If you're building your first real structure, want to grow your edge with smart, risk-aware tools, and are done relying on X vibes —<span className="font-bold italic"> this is your basecamp.</span>
 
           </p>
