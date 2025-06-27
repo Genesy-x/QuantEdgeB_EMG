@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
     <TextShimmer
       as="span"
       duration={3.5}
-      spread={2}
+      spread={3}
       className="ml-2 px-1 italic font-bold text-transparent bg-clip-text 
                  bg-gradient-to-r from-blue-400 to-blue-800 
                  dark:from-blue-500 dark:to-blue-300 
