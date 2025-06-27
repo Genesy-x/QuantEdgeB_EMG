@@ -26,13 +26,13 @@ export function TextShimmer({
 
   return (
     <MotionComponent
-      className={cn(
-        'relative inline-block bg-[length:250%_100%,auto] bg-clip-text',
-        'text-transparent [--base-color:#a1a1aa] [--base-gradient-color:#000]',
-        '[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-gradient-color),#0000_calc(50%+var(--spread)))] [background-repeat:no-repeat,padding-box]',
-        'dark:[--base-color:theme(colors.blue.600)] dark:[--base-gradient-color:#ffffff] dark:[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-gradient-color),#0000_calc(50%+var(--spread)))]',
-        className
-      )}
+  className={cn(
+    'relative inline-block bg-[length:250%_100%,auto] bg-clip-text text-transparent',
+    '[--base-color:linear-gradient(to right,theme(colors.blue.400),theme(colors.blue.800))]',
+    '[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-color),#0000_calc(50%+var(--spread)))] [background-repeat:no-repeat,padding-box]',
+    'dark:[--base-color:linear-gradient(to right,theme(colors.blue.300),theme(colors.white))]',
+    className
+  )}
       initial={{ backgroundPosition: '100% center' }}
       animate={{ backgroundPosition: '0% center' }}
       transition={{
