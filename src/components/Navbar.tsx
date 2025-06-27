@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, X, Menu } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -7,6 +7,7 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [plansDropdownOpen, setPlansDropdownOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,22 @@ export const Navbar: React.FC = () => {
       document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
+
+  const handleContactClick = () => {
+    setMobileMenuOpen(false);
+    
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll to contact
+      setTimeout(() => {
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      // If we're already on the home page, just scroll to contact
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const isHomePage = location.pathname === '/';
 
@@ -243,10 +260,7 @@ export const Navbar: React.FC = () => {
           {/* Footer */}
           <div className="p-6 border-t border-gray-700/50">
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={handleContactClick}
               className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
             >
               Get in Touch
