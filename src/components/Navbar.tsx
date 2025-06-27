@@ -80,16 +80,8 @@ export const Navbar: React.FC = () => {
                 className="text-gray-300 hover:text-white transition-colors relative group"
               >
                 Products
-                {/* Existing effect */}
                 <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-70"></span>
-                
-                {/* New neon effect */}
-                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 rounded-t-full transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                  <span className="absolute w-12 h-6 bg-blue-500/20 rounded-full blur-md -top-2 -left-2" />
-                  <span className="absolute w-8 h-6 bg-blue-500/20 rounded-full blur-md -top-1" />
-                  <span className="absolute w-4 h-4 bg-blue-500/20 rounded-full blur-sm top-0 left-2" />
-                </span>
               </Link>
               
               {/* Plans Dropdown */}
@@ -101,16 +93,8 @@ export const Navbar: React.FC = () => {
                 <button className="text-gray-300 hover:text-white transition-colors relative group flex items-center">
                   Plans
                   <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${plansDropdownOpen ? 'rotate-180' : ''}`} />
-                  {/* Existing effect */}
                   <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
                   <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-70"></span>
-                  
-                  {/* New neon effect */}
-                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 rounded-t-full transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <span className="absolute w-12 h-6 bg-blue-500/20 rounded-full blur-md -top-2 -left-2" />
-                    <span className="absolute w-8 h-6 bg-blue-500/20 rounded-full blur-md -top-1" />
-                    <span className="absolute w-4 h-4 bg-blue-500/20 rounded-full blur-sm top-0 left-2" />
-                  </span>
                 </button>
                 
                 {plansDropdownOpen && (
@@ -150,16 +134,8 @@ export const Navbar: React.FC = () => {
                 className="text-gray-300 hover:text-white transition-colors relative group"
               >
                 About Us
-                {/* Existing effect */}
                 <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-70"></span>
-                
-                {/* New neon effect */}
-                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 rounded-t-full transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                  <span className="absolute w-12 h-6 bg-blue-500/20 rounded-full blur-md -top-2 -left-2" />
-                  <span className="absolute w-8 h-6 bg-blue-500/20 rounded-full blur-md -top-1" />
-                  <span className="absolute w-4 h-4 bg-blue-500/20 rounded-full blur-sm top-0 left-2" />
-                </span>
               </Link>
             </div>
             
