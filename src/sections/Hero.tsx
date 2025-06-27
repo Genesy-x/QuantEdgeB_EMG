@@ -48,13 +48,20 @@ export const Hero: React.FC = () => {
           <p className="text-3xl md:text-4xl text-gray-300 mt-8 whitespace-nowrap flex justify-center">
             Trading Made{' '}
             <TextShimmer
-              as="span"
-              duration={3.5}
-              spread={2}
-              className="ml-2 italic font-bold text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-800"
+  as="span"
+  duration={2.5}
+  spread={3}
+  className="ml-2 italic font-bold text-3xl md:text-4xl 
+    text-transparent 
+    bg-clip-text 
+    bg-gradient-to-r 
+    from-blue-300 
+    to-blue-800 
+    dark:from-blue-400 
+    dark:to-blue-600"
 >
-              Easy
-            </TextShimmer>
+  Easy
+</TextShimmer>
           </p>
         </div>
         
