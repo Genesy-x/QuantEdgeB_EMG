@@ -56,6 +56,11 @@ export const Hero: React.FC = () => {
                  bg-gradient-to-r from-blue-400 to-blue-800 
                  dark:from-blue-500 dark:to-blue-300 
                  text-3xl md:text-4xl"
+      style={{
+        '--base-color': '#60a5fa',
+        '--base-gradient-color': '#ffffff',
+        backgroundImage: 'var(--bg), linear-gradient(90deg, #60a5fa, #1e40af)',
+      } as React.CSSProperties}
     >
       Easy
     </TextShimmer>
