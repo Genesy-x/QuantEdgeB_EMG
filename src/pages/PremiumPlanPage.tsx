@@ -106,20 +106,22 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
       ]
     },
     {
-      title: "Core Systems Included",
-      description: 
-        <>
-        Comprehensive rotation and relative strength systems designed to optimize portfolio allocation and identify emerging opportunities. These tools help you stay ahead of market rotations and capitalize on strength-based momentum shifts.
-        </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749059061/QuantEdgeB_Crypto_Trading_Major_Sync.png",
-      features: [
-        "Spectra RS Inferno",
-        "Altitude Alpha", 
-        "MajorSync",
-        "Universal RS Protocol",
-        "Meme Screener"
-      ]
-    }
+  title: "Rotation Intelligence for Aggressive Allocators",
+  description: 
+    <>
+    These systems are built for traders who want to <strong>lead the rotation, not follow it</strong>. By combining deep strength analysis, capital flow filters, and macro alignment tools, you’ll know exactly <strong>where to be — and when to move.</strong>
+    <br/><br/>
+    Outperformers rise fast. This suite helps you catch them before they peak — and exit before they fade.
+    </>,
+  image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749059061/QuantEdgeB_Crypto_Trading_Major_Sync.png",
+  features: [
+    "Spectra RS Inferno — rank strength with heat-mapped intensity and cycle context",
+    "Altitude Alpha — track outliers early in emerging momentum waves",
+    "MajorSync — synchronize views across timeframes for total clarity",
+    "Universal RS Protocol — universal strength logic across any asset or sector",
+    "Meme Screener — capitalize on narrative-driven breakouts with signal filtering"
+  ]
+}
   ];
 
   return (
