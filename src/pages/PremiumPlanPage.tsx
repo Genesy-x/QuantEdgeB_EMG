@@ -115,11 +115,11 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
     </>,
   image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749059061/QuantEdgeB_Crypto_Trading_Major_Sync.png",
   features: [
-    "Spectra RS Inferno — rank strength with heat-mapped intensity and cycle context",
-    "Altitude Alpha — track outliers early in emerging momentum waves",
-    "MajorSync — synchronize views across timeframes for total clarity",
-    "Universal RS Protocol — universal strength logic across any asset or sector",
-    "Meme Screener — capitalize on narrative-driven breakouts with signal filtering"
+    "Rank strength with heat-mapped intensity and cycle context",
+    "Track outliers early in emerging momentum waves",
+    "Synchronize views across timeframes for total clarity",
+    "Universal strength logic across any asset or sector",
+    "Capitalize on narrative-driven breakouts with signal filtering"
   ]
 }
   ];
