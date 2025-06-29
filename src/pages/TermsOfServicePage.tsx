@@ -37,11 +37,7 @@ function TermsOfServicePage() {
         >
           <div className="prose prose-invert max-w-none text-gray-300 space-y-6">
             <p className="text-xl md:text-2xl text-white mb-4">
-              Welcome to <strong>QuantEdgeB</strong> (
-              <a href="https://quantedgeb.com" target="_blank" rel="noopener noreferrer">
-                quantedgeb.com
-              </a>
-              ). By accessing or using our website and services, you agree to the following Terms of Service ("Terms").
+              Welcome to <strong>QuantEdgeB</strong>.<br/> By accessing or using our website and services, you agree to the following Terms of Service ("Terms").
             </p>
 
             <p className="text-xl md:text-2xl font-bold text-white mb-3">1. General Information</p>
