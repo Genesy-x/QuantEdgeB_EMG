@@ -13,7 +13,7 @@ function PrivacyPolicyPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <GradientText
             colors={["#40ffaa", "#ff40aa", "#40ffaa"]}
@@ -22,8 +22,20 @@ function PrivacyPolicyPage() {
           >
             Privacy Policy
           </GradientText>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
             Last updated: June 2025
+          </p>
+        </motion.div>
+
+        {/* Welcome text - outside container, centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center mb-16"
+        >
+          <p className="text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto leading-relaxed">
+            Welcome to <strong>QuantEdgeB</strong>. This Privacy Policy explains how we collect, use, and protect your personal information.
           </p>
         </motion.div>
 
@@ -34,11 +46,7 @@ function PrivacyPolicyPage() {
           className="bg-gray-900/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
         >
           <div className="prose prose-invert max-w-none">
-            <div className="min-h-[900px] text-gray-300 leading-relaxed space-y-6">
-              <p className="text-xl md:text-2xl font-bold text-white mb-4">
-                Welcome to <strong>QuantEdgeB</strong>. This Privacy Policy explains how we collect, use, and protect your personal information. 
-              </p>
- 
+            <div className="min-h-[400px] text-gray-300 leading-relaxed space-y-6">
               <p className="text-xl md:text-2xl font-bold text-white mb-3">1. Information We Collect</p>
               <ul className="text-gray-300 mb-4">
                 <li>Email address (for communication and service access)</li>

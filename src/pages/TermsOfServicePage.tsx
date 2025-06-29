@@ -14,7 +14,7 @@ function TermsOfServicePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <GradientText
             colors={["#ffaa40", "#40ffaa", "#ffaa40"]}
@@ -23,8 +23,21 @@ function TermsOfServicePage() {
           >
             Terms of Service
           </GradientText>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
             Last updated: June 2025
+          </p>
+        </motion.div>
+
+        {/* Welcome text - outside container, centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center mb-16"
+        >
+          <p className="text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto leading-relaxed">
+            Welcome to <strong>QuantEdgeB</strong>.<br/> 
+            By accessing or using our website and services, you agree to the following Terms of Service ("Terms").
           </p>
         </motion.div>
 
@@ -36,10 +49,6 @@ function TermsOfServicePage() {
           className="bg-gray-900/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
         >
           <div className="prose prose-invert max-w-none text-gray-300 space-y-6">
-            <p className="text-xl md:text-2xl text-white mb-4">
-              Welcome to <strong>QuantEdgeB</strong>.<br/> By accessing or using our website and services, you agree to the following Terms of Service ("Terms").
-            </p>
-
             <p className="text-xl md:text-2xl font-bold text-white mb-3">1. General Information</p>
             <p className="text-gray-300 mb-4">
               QuantEdgeB provides access to proprietary crypto trading indicators and strategies delivered via TradingView as
