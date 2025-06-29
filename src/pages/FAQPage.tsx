@@ -5,12 +5,12 @@ import { GradientText } from '../components/ui/gradient-text';
 function FAQPage() {
   const faqs = [
     {
-      question: "What’s your refund policy?",
-      answer: "We don’t offer refunds — but you can try everything free for 3 days by subscribing to a monthly plan, and 7 days if you take the annual one. Use the trial to test the tools, explore the systems, and see if it fits your style before any payment is processed."
+      question: "What's your refund policy?",
+      answer: "We don't offer refunds — but you can try everything free for 3 days by subscribing to a monthly plan, and 7 days if you take the annual one. Use the trial to test the tools, explore the systems, and see if it fits your style before any payment is processed."
     },
     {
       question: "Do the indicators and strategies work on all assets?",
-      answer: "They’re optimized for crypto — but with the right settings, you can absolutely adapt them to stocks, indices, or other assets. Many traders do."
+      answer: "They're optimized for crypto — but with the right settings, you can absolutely adapt them to stocks, indices, or other assets. Many traders do."
     },
     {
       question: "Are your tools beginner-friendly?",
@@ -29,9 +29,9 @@ Subscribers get direct access to me for guidance, feedback, and help setting up 
       answer: <>
         Right after subscribing via Whop:<br/>
 
- 1. Go to the <b>“Integrations”</b> section<br/>
+ 1. Go to the <b>"Integrations"</b> section<br/>
 
- 2. Click <b>“TradingView” → “Claim Access”</b><br/>
+ 2. Click <b>"TradingView" → "Claim Access"</b><br/>
 
  3. Your invite-only tools will activate instantly on your account<br/>
         </>,
@@ -39,8 +39,8 @@ Subscribers get direct access to me for guidance, feedback, and help setting up 
     {
       question: "Where can I find all the resources and scripts?",
       answer: <>
-        Once subscribed, you’ll receive a welcome message from Whop with a link to our private Discord.<br/>
-        Inside the server, head to the <b>#resources</b> channel — everything’s there:<br/>
+        Once subscribed, you'll receive a welcome message from Whop with a link to our private Discord.<br/>
+        Inside the server, head to the <b>#resources</b> channel — everything's there:<br/>
 <i>Private scripts, tool guides, educational breakdowns, and more.</i>
         </>,
     } 
@@ -80,8 +80,8 @@ Subscribers get direct access to me for guidance, feedback, and help setting up 
             <div className="min-h-[400px] text-gray-300 leading-relaxed space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index}>
-                  <p><strong>{faq.question}</strong></p>
-                  <p>{faq.answer}</p>
+                  <p className="text-xl md:text-2xl font-bold text-white mb-3">{faq.question}</p>
+                  <p className="text-gray-300 mb-4">{faq.answer}</p>
                   {index < faqs.length - 1 && <br />}
                 </div>
               ))}
