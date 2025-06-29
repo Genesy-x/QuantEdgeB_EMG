@@ -19,7 +19,7 @@ export function HeroPill({
 }: HeroPillProps) {
   const Component = isExternal ? motion.a : motion(Link);
   const linkProps = isExternal 
-    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    ? { href, target: "/documentation", rel: "noopener noreferrer" }
     : { to: href };
 
   return (
