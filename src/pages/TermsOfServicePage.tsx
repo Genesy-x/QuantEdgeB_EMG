@@ -36,7 +36,7 @@ function TermsOfServicePage() {
           className="bg-gray-900/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
         >
           <div className="prose prose-invert max-w-none text-gray-300 space-y-6">
-            <p className="text-xl md:text-2xl font-bold text-white mb-4">
+            <p className="text-xl md:text-2xl text-white mb-4">
               Welcome to <strong>QuantEdgeB</strong> (
               <a href="https://quantedgeb.com" target="_blank" rel="noopener noreferrer">
                 quantedgeb.com
