@@ -69,11 +69,11 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
     </>,
   image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
   features: [
-    "Adaptive Pulsar Momentum — lock in on early acceleration with layered confirmation",
-    "MA Thrust Engineer — target breakout energy with dynamic moving average thrust logic",
-    "Regime Reper — detect environment shifts and adapt instantly",
-    "TempoV — measure trend speed and acceleration in real time",
-    "Volume Momentum — uncover hidden pressure behind price movement"
+    "Lock in on early acceleration with layered confirmation",
+    "Target breakout energy with dynamic moving average thrust logic",
+    "Detect environment shifts and adapt instantly",
+    "Measure trend speed and acceleration in real time",
+    "Uncover hidden pressure behind price movement"
   ]
 }
 
