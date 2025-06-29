@@ -34,7 +34,7 @@ function PrivacyPolicyPage() {
           className="bg-gray-900/60 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
         >
           <div className="prose prose-invert max-w-none">
-            <div className="min-h-[400px] text-gray-300 leading-relaxed space-y-6">
+            <div className="min-h-[900px] text-white leading-relaxed space-y-6">
               <p>
                 Welcome to <strong>QuantEdgeB</strong>. This Privacy Policy explains how we collect, use, and protect your personal information.
               </p>
