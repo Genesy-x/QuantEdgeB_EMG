@@ -29,7 +29,7 @@ export function HeroPill({
         "flex w-auto items-center space-x-2 rounded-full cursor-pointer",
         "bg-primary/20 ring-1 ring-accent",
         "px-2 py-1 whitespace-pre",
-        "hover:bg-primary/30 hover:ring-accent/50 ",
+        "hover:bg-primary/30 hover:ring-accent/50",
         "hover:scale-105 active:scale-95",
         "relative z-10",
         className
