@@ -35,7 +35,8 @@ function PrivacyPolicyPage() {
           className="text-center mb-16"
         >
           <p className="text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto leading-relaxed">
-            Welcome to <strong>QuantEdgeB</strong>. This Privacy Policy explains how we collect, use, and protect your personal information.
+            <i>Welcome to <strong>QuantEdgeB</strong></i>.<br/> <br/>
+            This Privacy Policy explains how we collect, use, and protect your personal information.
           </p>
         </motion.div>
 
