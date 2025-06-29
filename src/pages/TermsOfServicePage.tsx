@@ -36,7 +36,7 @@ function TermsOfServicePage() {
           className="text-center mb-16"
         >
           <p className="text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto leading-relaxed">
-            <i>Welcome to <strong>QuantEdgeB</strong></i>.<br/> 
+            <i>Welcome to <strong>QuantEdgeB</strong></i>.<br/> <br/> 
             By accessing or using our website and services, you agree to the following Terms of Service ("Terms").
           </p>
         </motion.div>
