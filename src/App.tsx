@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BackToTop } from './components/BackToTop';
 import { ScrollToTop } from './components/ScrollToTop';
+import { AnnouncementBar } from './components/AnnouncementBar';
 import { Navbar } from './components/Navbar';
 import { Footer } from './sections/Footer';
 import HomePage from './pages/HomePage';
@@ -23,6 +24,7 @@ function App() {
         <InteractiveNeuralVortex />
         <div className="relative z-10">
           <ScrollToTop />
+          <AnnouncementBar />
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
