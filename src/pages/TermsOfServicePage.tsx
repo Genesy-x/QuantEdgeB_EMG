@@ -76,7 +76,7 @@ function TermsOfServicePage() {
 
             <p className="text-xl md:text-2xl font-bold text-white mb-3">5. Support and Communication</p>
             <ul className="text-gray-300 mb-4">
-              <li>Support is available through Discord, X (formerly Twitter), and personal mentorship (for premium plans).</li>
+              <li>Support is available through Discord, X (formerly Twitter), and personal mentorship (for Alpha plans).</li>
               <li>Email may be used for account-related updates or service notifications.</li>
             </ul>
 
