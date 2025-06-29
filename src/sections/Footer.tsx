@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <img src="https://res.cloudinary.com/dq4flimtm/image/upload/v1749311877/G-removebg-preview_lrikjg.webp" alt="QuantEdgeB Logo" className="h-12 w-12 mr-1" />
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-blue-300">
+              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 QuantEdgeB
               </span>
             </div>
