@@ -60,20 +60,23 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
       ]
     },
     {
-      title: "Core Engines Included",
-      description: 
-        <>
-        Advanced technical analysis engines designed for precision execution and market timing. These sophisticated tools provide the edge you need for successful day and swing trading with adaptable logic that responds to changing market conditions.
-        </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
-      features: [
-        "Adaptive Pulsar Momentum",
-        "MA Thrust Engineer",
-        "Regime Reper",
-        "TempoV",
-        "Volume Momentum"
-      ]
-    }
+  title: "Engines Built for Execution Under Pressure",
+  description: 
+    <>
+    These aren’t just indicators — they’re <strong>execution-grade systems</strong> crafted for fast, focused trading. Each engine is designed to cut delay, reduce hesitation, and give you the clarity to act when it matters most.
+    <br/><br/>
+    Built for volatility. Optimized for speed. Trusted when timing is everything.
+    </>,
+  image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
+  features: [
+    "Adaptive Pulsar Momentum — lock in on early acceleration with layered confirmation",
+    "MA Thrust Engineer — target breakout energy with dynamic moving average thrust logic",
+    "Regime Reper — detect environment shifts and adapt instantly",
+    "TempoV — measure trend speed and acceleration in real time",
+    "Volume Momentum — uncover hidden pressure behind price movement"
+  ]
+}
+
   ];
 
   const majorRotationSections = [
