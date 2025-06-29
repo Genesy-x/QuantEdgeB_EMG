@@ -53,7 +53,7 @@ Learn the <em> "why" </em> behind every signal—not just how to use it, but how
         Because mastery should never be one-size-fits-all.<br/>
 Get <strong>direct sessions</strong> with the creator — to tweak, refine, adapt and accelerate.
 </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751186459/Untitled_design_taoyht.png",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751186459/QuantEdgeB_Crypto_Trading_1o1_Mentorship.png",
       features: [
         "Personal onboarding call",
         "Custom toolkit configuration",
