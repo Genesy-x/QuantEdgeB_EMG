@@ -35,7 +35,7 @@ function PrivacyPolicyPage() {
         >
           <div className="prose prose-invert max-w-none">
             <div className="min-h-[900px] text-gray-300 leading-relaxed space-y-6">
-              <p>
+              <p className="text-xl md:text-2xl font-bold text-white mb-4">
                 Welcome to <strong>QuantEdgeB</strong>. This Privacy Policy explains how we collect, use, and protect your personal information. 
               </p>
  
