@@ -60,7 +60,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
       ]
     },
     {
-  title: "Engines Built for Execution Under Pressure",
+  title: "Built for Execution Under Pressure",
   description: 
     <>
     These aren’t just indicators — they’re <strong>execution-grade systems</strong> crafted for fast, focused trading. Each engine is designed to cut delay, reduce hesitation, and give you the clarity to act when it matters most.
