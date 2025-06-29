@@ -106,7 +106,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
       ]
     },
     {
-  title: "Rotation Intelligence for Aggressive Allocators",
+  title: "Refined Rotation for Aggressive Allocators",
   description: 
     <>
     These systems are built for traders who want to <strong>lead the rotation, not follow it</strong>. By combining deep strength analysis, capital flow filters, and macro alignment tools, you’ll know exactly <strong>where to be — and when to move.</strong>
