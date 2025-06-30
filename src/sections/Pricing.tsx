@@ -85,7 +85,7 @@ export const Pricing: React.FC = () => {
       ],
       description: "For those ready to trade with confidence | Full-cycle systems for smarter entries, exits, and rotations",
       buttonText: "Start Free Trial",
-      href: "https://whop.com/quantedgeb/?a=quantedge17",
+      href: "https://whop.com/quantedgeb-premium/?a=quantedge17",
       learnMoreHref: "/plans/premium",
       isPopular: true,
       glowColor: 'purple' as const
