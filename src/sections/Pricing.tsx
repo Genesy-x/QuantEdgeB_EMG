@@ -49,6 +49,13 @@ export const Pricing: React.FC = () => {
     }
   };
 
+  // Get the appropriate href for Premium+ based on selected variant
+  const getPremiumPlusHref = () => {
+    return selectedVariant === 'trading' 
+      ? 'https://whop.com/quantedgeb-tradingsuite/?a=quantedge17'
+      : 'https://whop.com/quantedgeb-multiedgesuite/?a=quantedge17';
+  };
+
   const plans = [
     {
       name: "FUNDAMENTAL",
@@ -117,7 +124,7 @@ export const Pricing: React.FC = () => {
       },
       description: "For Active Traders demanding precision | Tactical engines for timing, rotation, and execution",
       buttonText: "Start Free Trial",
-      href: "https://whop.com/quantedgeb/?a=quantedge17",
+      href: getPremiumPlusHref(), // Dynamic href based on selected variant
       learnMoreHref: "/plans/premium",
       isPopular: false,
       glowColor: 'green' as const
@@ -301,7 +308,7 @@ export const Pricing: React.FC = () => {
                       variant="default"
                       size="default"
                       className="w-full text-white rounded-md"
-                      onClick={() => window.open('https://whop.com/quantedgeb/?a=quantedge17', '_blank')} 
+                      onClick={() => window.open(plan.name === "PREMIUM +" ? getPremiumPlusHref() : plan.href, '_blank')} 
                     >
                       {plan.buttonText}
                     </Button>
