@@ -66,7 +66,7 @@ export const Pricing: React.FC = () => {
       ],
       description: "For traders building their foundation | Structure, insight, and direction without the noise",
       buttonText: "Start Free Trial",
-      href: "https://whop.com/quantedgeb/?a=quantedge17",
+      href: "https://whop.com/quantedgeb-fundamental/?a=quantedge17",
       learnMoreHref: "/plans/fundamental",
       isPopular: false,
       glowColor: 'blue' as const
