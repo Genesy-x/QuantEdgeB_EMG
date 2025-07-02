@@ -19,7 +19,7 @@ const services = [
   {
     title: "Value Suite",
     description: "Decode Market Regimes · Define Opportunity Zones",
-    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Value_Suite.webp"
+    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445904/ETHUSD_2025-07-02_08-38-55_fbb0c_gqezi9.webp"
   },
   {
     title: "Portfolio Pro",
