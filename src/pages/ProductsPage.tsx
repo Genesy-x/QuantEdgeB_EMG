@@ -53,7 +53,7 @@ function ProductsPage() {
       Portfolio Pro is your portfolio's autopilot — dynamically balancing exposure, correlations, and volatility across positions. <br/>
         Whether you're <em>passive</em> or <em>active</em>, this system keeps your risk distribution <strong>efficient</strong> and <strong>responsive</strong>.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751446338/BTCUSD_2025-07-02_10-51-27_30991_swslv6.webp",
       features: [
         "Allocates and redistributes risk across trades",
         "Tracks correlation shifts and volatility in real time",
