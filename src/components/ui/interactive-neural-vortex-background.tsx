@@ -54,9 +54,9 @@ const InteractiveNeuralVortex = () => {
       const scrollY = window.pageYOffset;
       const windowHeight = window.innerHeight;
       
-      // Approximate section positions (adjust these values based on your actual layout)
-      const tradingSuiteStart = windowHeight * 1.5; // After intro section
-      const rotationSuiteStart = windowHeight * 3; // After trading suite section
+      // Adjusted section positions to trigger earlier
+      const tradingSuiteStart = windowHeight * 0.8; // Much earlier - around 80% of first viewport
+      const rotationSuiteStart = windowHeight * 2.2; // Earlier - around 2.2 viewports
       
       if (scrollY >= rotationSuiteStart) {
         return 'premiumRotation';
