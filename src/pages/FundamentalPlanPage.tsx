@@ -81,7 +81,7 @@ function FundamentalPlanPage() {
         You're not just buying tools. You're joining a system that <strong> keeps you sharp and synced with the market.</strong>
    </>,
       
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751443862/Education_kov1ec.webp",
       features: [
         <>
       Daily&thinsp;/&thinsp;Weekly Market Reports —&nbsp; <em> skip noise, get real context</em>
