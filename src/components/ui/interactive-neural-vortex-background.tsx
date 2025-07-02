@@ -135,10 +135,12 @@ const InteractiveNeuralVortex = () => {
         noise = max(0.0, noise - 0.5);
         noise *= (1. - length(vUv - .5));
         
-        // Use dynamic colors
+        // Use dynamic colors with consistent intensity
         color = u_color1;
-        color = mix(color, u_color2, 0.32 + 0.16 * sin(2.0 * u_scroll_progress + 1.2));
-        color += u_mix_color * sin(2.0 * u_scroll_progress + 1.5);
+        // Keep scroll progress limited to maintain consistent intensity
+        float limitedScrollProgress = clamp(u_scroll_progress, 0.0, 1.0);
+        color = mix(color, u_color2, 0.32 + 0.16 * sin(2.0 * limitedScrollProgress + 1.2));
+        color += u_mix_color * sin(2.0 * limitedScrollProgress + 1.5);
         color = color * noise;
         gl_FragColor = vec4(color, noise);
       }
@@ -258,7 +260,9 @@ const InteractiveNeuralVortex = () => {
         pointer.current.x / window.innerWidth, 
         1 - pointer.current.y / window.innerHeight
       );
-      gl.uniform1f(uScrollProgress, window.pageYOffset / (2 * window.innerHeight));
+      // Limit scroll progress to maintain consistent intensity
+      const limitedScrollProgress = Math.min(window.pageYOffset / (2 * window.innerHeight), 1.0);
+      gl.uniform1f(uScrollProgress, limitedScrollProgress);
       
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       animationRef.current = requestAnimationFrame(render);
