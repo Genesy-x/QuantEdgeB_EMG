@@ -29,7 +29,7 @@ const services = [
   {
     title: "Trading Suite",
     description: "Navigate. Analyze. Conquer",
-    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Trading_Suite.webp"
+    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751446898/ETHUSDT.P_2025-07-02_11-00-57_1cfa8_teaazw.webp"
   },
   {
     title: "Altcoin Edge",
