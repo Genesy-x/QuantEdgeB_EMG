@@ -26,7 +26,7 @@ function ProductsPage() {
       A hybrid model blending macro fundamentals, sentiment data, and technical filters — built to identify <strong>deep value zones</strong> and <strong>early accumulation</strong> ranges. <br/>
         Whether you're DCA'ing or building core positions, this model helps you buy <strong>conviction</strong>, not <em>hype</em>.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Long_Term_Valuation.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445780/BTCUSD_2025-07-02_10-42-25_c7943_oy3xes.webp",
       features: [
         "Highlights undervalued zones for long-term setups",
         "Merges sentiment, valuation, and technical timing",
