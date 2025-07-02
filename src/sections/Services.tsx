@@ -24,7 +24,7 @@ const services = [
   {
     title: "Portfolio Pro",
     description: "Risk Management Made Easy",
-    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp"
+    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751446338/BTCUSD_2025-07-02_10-51-27_30991_swslv6.webp"
   },
   {
     title: "Trading Suite",
