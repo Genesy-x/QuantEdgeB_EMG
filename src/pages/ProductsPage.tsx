@@ -79,7 +79,7 @@ function ProductsPage() {
       description: <>
       <strong><em>Altcoin Edge</em></strong> was made for the chaos of low-liquidity, high-velocity <em>alt markets</em>. It detects early bursts of strength, filters out false moves, and rotates you into the <strong>highest-momentum asset</strong> — <em>before the crowd notices</em>.
          </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Altcoin_Edge.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751446054/BTCUSD_2025-07-02_10-46-37_99e9d_qk16gq.webp",
       features: [
         "Detects early momentum surges in altcoins",
         "Auto-rotates into strongest performers",
