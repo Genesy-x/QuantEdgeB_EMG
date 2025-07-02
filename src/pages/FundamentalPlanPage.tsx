@@ -60,7 +60,7 @@ function FundamentalPlanPage() {
         Know your edge before you trade. Smart tools to help you <strong> test, tweak, and trust </strong> your setups.
     </>,
       
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Value_Suite.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751443990/BTCUSD_2025-07-02_09-52-06_bede4_ftoqlq.webp",
       features: [
        <> 
         Backtesting Templates —&nbsp; <em> see what works (and what doesn't)</em>
