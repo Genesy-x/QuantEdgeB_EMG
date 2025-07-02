@@ -37,7 +37,7 @@ function FundamentalPlanPage() {
       <>
         Easy-to-use, powerful indicators designed to help you <strong> build confidence </strong> and spot real entries.
       </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749058955/QuantEdgeB_Crypto_Trading_Basic_1.png",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751444135/BTCUSD_2025-07-01_20-58-16_ef4d6_sr9oyy.webp",
       features: [
       <>   
         Trend tools like DEMA, Z-SMMA, PRC-EPMA —&nbsp; <em> smooth, directional clarity</em>
