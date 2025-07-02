@@ -12,7 +12,7 @@ function FundamentalPlanPage() {
       <>
         Track capital flows, spot regime shifts, and get a <strong> macro-level read</strong> on the entire crypto space.
   </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749059072/QuantEdgeB_Crypto_Trading_Valuation_1.png",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751444123/BTCUSD_2025-07-02_08-41-53_e819b_r4nfb3.webp",
       features: [
      <>
       Breadth & Momentum Indexes —&nbsp; <em> know when the tide's turning </em>
