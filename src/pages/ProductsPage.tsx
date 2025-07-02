@@ -66,7 +66,7 @@ function ProductsPage() {
       description: <>
       This <strong>all-in-one suite</strong> is the core technical engine behind our <strong><em>Premium+</em></strong> tier. It integrates advanced momentum, trend, volatility, and reversal detection into one seamless interface — giving you tactical clarity across any trade.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Trading_Suite.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751446898/ETHUSDT.P_2025-07-02_11-00-57_1cfa8_teaazw.webp",
       features: [
         "Integrated system covering trend, volatility & momentum",
         "Ideal for short to mid-term trading setups",
