@@ -67,7 +67,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
     <br/><br/>
     Built for volatility. Optimized for speed. Trusted when timing is everything.
     </>,
-  image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Portfolio_Pro.webp",
+  image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445181/BTCUSDT.P_2025-07-02_10-31-56_698b9_bupekt.webp",
   features: [
     "Lock in on early acceleration with layered confirmation",
     "Target breakout energy with dynamic moving average thrust logic",
