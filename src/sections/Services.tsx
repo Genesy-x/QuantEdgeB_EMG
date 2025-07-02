@@ -9,7 +9,7 @@ const services = [
   {
     title: "Major Rotation",
     description: "Optimize Exposure, Eliminate Regret",
-    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Major_Rotation.webp"
+    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445621/BTCUSD_2025-07-02_10-39-07_8ba42_wbhmoq.webp"
   },
   {
     title: "Long-Term Valuation",
