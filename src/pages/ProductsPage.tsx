@@ -39,7 +39,7 @@ function ProductsPage() {
       description: <>
       The Value Suite gives you a multi-layered view of asset health — highlighting <strong>true value zones</strong> while flagging overheated or extended conditions. Designed to <em>cut emotion</em>, <strong>add discipline</strong>, and adapt to market regime shifts.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Value_Suite.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445904/ETHUSD_2025-07-02_08-38-55_fbb0c_gqezi9.webp",
       features: [
         "Differentiates value vs. overextension",
         "Reduces emotion-driven decisions",
