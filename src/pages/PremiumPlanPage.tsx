@@ -113,7 +113,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
     <br/><br/>
     Outperformers rise fast. This suite helps you catch them before they peak — and exit before they fade.
     </>,
-  image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749059061/QuantEdgeB_Crypto_Trading_Major_Sync.png",
+  image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751444346/BTCUSD_2025-07-01_13-59-25_17e05_tykj0v.webp",
   features: [
     "Rank strength with heat-mapped intensity and cycle context",
     "Track outliers early in emerging momentum waves",
