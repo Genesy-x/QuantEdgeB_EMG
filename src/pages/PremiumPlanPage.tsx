@@ -86,7 +86,7 @@ Long-Term Cycle Tools —&nbsp; <em> stop reacting, start anticipating</em>
         <>
         Powered by <strong> alpha mapping, RS flow, and cycle timing. </strong>
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Major_Rotation.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751444399/BTCUSD_2025-07-01_21-56-07_b531a_uyaeeh.webp",
       features: [
         <>
         Includes everything in&nbsp; <strong> <em> Premium </em> </strong>
