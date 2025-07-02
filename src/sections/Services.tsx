@@ -34,7 +34,7 @@ const services = [
   {
     title: "Altcoin Edge",
     description: "Rotate Smart. Ride Momentum. Exit Weakness.",
-    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Altcoin_Edge.webp"
+    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751446054/BTCUSD_2025-07-02_10-46-37_99e9d_qk16gq.webp"
   }
 ];
 
