@@ -12,7 +12,7 @@ function ProductsPage() {
       description: <> 
       <strong><em>MajorRotation</em></strong> tracks capital flow, relative strength, and macro shifts in real time — rotating you into outperforming assets <strong>before anyone</strong>. <br/>Built for traders who want their capital working where momentum is strongest.
         </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Major_Rotation.webp",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445621/BTCUSD_2025-07-02_10-39-07_8ba42_wbhmoq.webp",
       features: [
         "Auto-identifies top-performing sectors/assets",
         "Moves capital out of weakness, into strength",
