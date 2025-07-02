@@ -14,7 +14,7 @@ const services = [
   {
     title: "Long-Term Valuation",
     description: "Low Entries. Long Horizons. High Conviction.",
-    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749630079/QuantEdgeB_Crypto_Trading_Long_Term_Valuation.webp"
+    image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751445780/BTCUSD_2025-07-02_10-42-25_c7943_oy3xes.webp"
   },
   {
     title: "Value Suite",
