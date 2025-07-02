@@ -12,7 +12,7 @@ function PremiumPlanPage() {
         <>
         Built to track macro-to-micro dynamics and help you act with clarity—not emotion.
 </>,
-      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1749058278/QuantEdgeB_Crypto_Trading_SDCA.png",
+      image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751444267/BTCUSD_2025-07-01_12-32-48_fa3ff_werza1.webp",
       features: [
         <>
         Includes everything in&nbsp; <em> <strong> Fundamental Tier </strong> </em>
