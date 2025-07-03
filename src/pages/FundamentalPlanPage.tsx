@@ -173,7 +173,7 @@ function FundamentalPlanPage() {
                   variant="default" 
                   size="lg" 
                   className="text-white group rounded-md inline-flex items-center"
-                  onClick={() => window.open('https://whop.com/quantedgeb/?a=quantedge17', '_blank')}
+                  onClick={() => window.open('https://whop.com/quantedgeb-fundamental/?a=quantedge17', '_blank')}
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
