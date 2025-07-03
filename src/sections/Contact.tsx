@@ -15,8 +15,7 @@ export const Contact: React.FC = () => {
     message: false
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [result, setResult] = useState("");
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -42,50 +41,42 @@ export const Contact: React.FC = () => {
     }
   };
   
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setFormStatus('idle');
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.currentTarget);
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/quantedgeb@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          ...data,
-          _subject: 'New Contact Form Submission - QuantEdgeB',
-          _template: 'table'
-        })
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
 
-      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
 
-      setFormStatus('success');
-      setFormState({
-        name: '',
-        email: '',
-        message: ''
-      });
-      
-      setFocused({
-        name: false,
-        email: false,
-        message: false
-      });
-      
-      form.reset();
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.currentTarget.reset();
+        setFormState({
+          name: '',
+          email: '',
+          message: ''
+        });
+        
+        setFocused({
+          name: false,
+          email: false,
+          message: false
+        });
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
     } catch (error) {
       console.error('Form submission error:', error);
-      setFormStatus('error');
-    } finally {
-      setIsSubmitting(false);
+      setResult('There was an error sending your message. Please try again.');
     }
   };
   
@@ -106,19 +97,27 @@ export const Contact: React.FC = () => {
           <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
             <h3 className="text-xl font-semibold text-white mb-6">Send us a message</h3>
             
-            {formStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-900/20 border border-green-700 rounded-lg">
-                <p className="text-green-400">Message sent successfully! We'll get back to you soon.</p>
+            {result && (
+              <div className={`mb-6 p-4 rounded-lg ${
+                result === "Form Submitted Successfully" 
+                  ? "bg-green-900/20 border border-green-700" 
+                  : result === "Sending...." 
+                    ? "bg-blue-900/20 border border-blue-700"
+                    : "bg-red-900/20 border border-red-700"
+              }`}>
+                <p className={
+                  result === "Form Submitted Successfully" 
+                    ? "text-green-400" 
+                    : result === "Sending...." 
+                      ? "text-blue-400"
+                      : "text-red-400"
+                }>
+                  {result}
+                </p>
               </div>
             )}
             
-            {formStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-900/20 border border-red-700 rounded-lg">
-                <p className="text-red-400">There was an error sending your message. Please try again.</p>
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-6">
               <div className="relative">
                 <input
                   type="text"
@@ -133,7 +132,7 @@ export const Contact: React.FC = () => {
                            focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
                            transition-all duration-300 text-white placeholder-gray-400"
                   required
-                  disabled={isSubmitting}
+                  disabled={result === "Sending...."}
                 />
               </div>
               
@@ -151,7 +150,7 @@ export const Contact: React.FC = () => {
                            focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
                            transition-all duration-300 text-white placeholder-gray-400"
                   required
-                  disabled={isSubmitting}
+                  disabled={result === "Sending...."}
                 />
               </div>
               
@@ -169,7 +168,7 @@ export const Contact: React.FC = () => {
                            focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
                            transition-all duration-300 text-white placeholder-gray-400 resize-none"
                   required
-                  disabled={isSubmitting}
+                  disabled={result === "Sending...."}
                 />
               </div>
               
@@ -178,14 +177,20 @@ export const Contact: React.FC = () => {
                 variant="default"
                 size="lg"
                 className="w-full text-white"
-                disabled={isSubmitting}
+                disabled={result === "Sending...."}
               >
                 <div className="flex items-center justify-center">
                   <Send className="h-5 w-5 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {result === "Sending...." ? 'Sending...' : 'Send Message'}
                 </div>
               </Button>
             </form>
+            
+            <span className="block mt-4 text-center text-sm text-gray-500">
+              {result && result !== "Sending...." && result !== "Form Submitted Successfully" && (
+                "Please try again or contact us directly on X."
+              )}
+            </span>
           </div>
 
           {/* Right Column - X (Twitter) Contact */}
