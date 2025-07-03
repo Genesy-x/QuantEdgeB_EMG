@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, X, Menu } from 'lucide-react';
+import { ChevronDown, X, Menu, Twitter, Globe, Bitcoin } from 'lucide-react';
 import { HeroPill } from './ui/hero-pill';
 
 export const Navbar: React.FC = () => {
@@ -278,8 +278,40 @@ export const Navbar: React.FC = () => {
             </nav>
           </div>
           
-          {/* Footer */}
+          {/* Footer with social icons and contact button */}
           <div className="p-6 border-t border-gray-700/50">
+            {/* Social Media Icons */}
+            <div className="flex justify-center space-x-6 mb-4">
+              <a 
+                href="https://x.com/quantedgeb" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50"
+                aria-label="Twitter/X"
+              >
+                <Twitter className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://whop.com/quantedgeb/?a=quantedge17" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50"
+                aria-label="Whop"
+              >
+                <Globe className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://www.tradingview.com/u/QuantEdgeB/#published-scripts" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50"
+                aria-label="TradingView"
+              >
+                <Bitcoin className="h-6 w-6" />
+              </a>
+            </div>
+            
+            {/* Contact Button */}
             <button
               onClick={handleContactClick}
               className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
