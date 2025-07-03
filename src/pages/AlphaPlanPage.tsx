@@ -118,7 +118,7 @@ See the market like an <strong>architect</strong> — and act like a <strong>pro
                       alt={section.title}
                       className={`w-full object-cover rounded-xl shadow-2xl ${
                         index === 0 || index === 1 
-                          ? 'h-[250px] md:h-[350px]' 
+                          ? 'h-[200px] md:h-[400px]' 
                           : 'h-[300px] md:h-[400px]'
                       }`}
                     />
