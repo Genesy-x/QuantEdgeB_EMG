@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
 
       if (data.success) {
         setResult("Form Submitted Successfully");
-        event.currentTarget.reset();
+        // Reset form state manually instead of using event.currentTarget.reset()
         setFormState({
           name: '',
           email: '',
