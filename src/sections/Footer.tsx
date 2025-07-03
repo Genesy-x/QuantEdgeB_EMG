@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a 
-                href="https://whop.com/quantedgeb/?a=quantedge17" 
+                href="https://whop.com/quantedgeb-premium/?a=quantedge17" 
                 className="text-gray-400 hover:text-blue-400 transition-colors"
                 aria-label="Whop"
               >
