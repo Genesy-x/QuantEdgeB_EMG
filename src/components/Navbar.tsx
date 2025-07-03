@@ -292,7 +292,7 @@ export const Navbar: React.FC = () => {
                 <Twitter className="h-6 w-6" />
               </a>
               <a 
-                href="https://whop.com/quantedgeb/?a=quantedge17" 
+                href="https://whop.com/quantedgeb-premium/?a=quantedge17" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50"
