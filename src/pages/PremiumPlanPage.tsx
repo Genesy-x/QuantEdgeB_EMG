@@ -227,7 +227,7 @@ Get the tools to track cycles, time entries, rotate assets, and build dynamic po
                     variant="default" 
                     size="lg" 
                     className="text-white group rounded-md inline-flex items-center"
-                    onClick={() => window.open('https://whop.com/quantedgeb/?a=quantedge17', '_blank')}
+                    onClick={() => window.open('https://whop.com/quantedgeb-premium/?a=quantedge17', '_blank')}
                   >
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -302,7 +302,7 @@ The TradingSuite unlocks a custom-built strategy engine for <strong> active day 
                     variant="default" 
                     size="lg" 
                     className="text-white group rounded-md inline-flex items-center"
-                    onClick={() => window.open('https://whop.com/quantedgeb/?a=quantedge17', '_blank')}
+                    onClick={() => window.open('https://whop.com/quantedgeb-tradingsuite/?a=quantedge17', '_blank')}
                   >
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
