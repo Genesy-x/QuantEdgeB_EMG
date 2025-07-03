@@ -59,10 +59,10 @@ const InteractiveNeuralVortex = () => {
       
       // Adjusted section positions - slower transitions on mobile
       const tradingSuiteStart = isMobile 
-        ? windowHeight * 1.2  // Much slower on mobile - around 1.2 viewports
+        ? windowHeight * 1.5  // Much slower on mobile - around 1.2 viewports
         : windowHeight * 0.8; // Desktop - around 80% of first viewport
       const rotationSuiteStart = isMobile 
-        ? windowHeight * 2.8  // Much slower on mobile - around 2.8 viewports
+        ? windowHeight * 3.0  // Much slower on mobile - around 2.8 viewports
         : windowHeight * 2.2; // Desktop - around 2.2 viewports
       
       if (scrollY >= rotationSuiteStart) {
