@@ -279,9 +279,23 @@ const InteractiveNeuralVortex = () => {
     updateColors();
     render();
 
+    // Check if device is mobile
+    const isMobile = () => {
+      return window.innerWidth < 768 || 'ontouchstart' in window;
+    };
+
     const handleMouseMove = (e) => {
-      pointer.current.tX = e.clientX;
-      pointer.current.tY = e.clientY;
+      // Only respond to mouse movement on non-mobile devices
+      if (!isMobile()) {
+        pointer.current.tX = e.clientX;
+        pointer.current.tY = e.clientY;
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      // Disable touch interaction on mobile devices
+      // Touch events are ignored to prevent weird effects and performance issues
+      return;
     };
 
     const handleScroll = () => {
@@ -291,18 +305,19 @@ const InteractiveNeuralVortex = () => {
       }
     };
 
-    window.addEventListener('pointermove', handleMouseMove);
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches[0]) {
-        pointer.current.tX = e.touches[0].clientX;
-        pointer.current.tY = e.touches[0].clientY;
-      }
-    });
+    // Only add mouse event listener for non-mobile devices
+    if (!isMobile()) {
+      window.addEventListener('pointermove', handleMouseMove);
+    }
+    
+    // Add touch event listener but make it do nothing on mobile
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('pointermove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('scroll', handleScroll);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
