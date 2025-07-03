@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Send, MessageCircle } from 'lucide-react';
 import { GradientText } from '../components/ui/gradient-text';
 import { Timeline } from '../components/ui/timeline';
+import confetti from 'canvas-confetti';
 
 function AboutPage() {
   const [formState, setFormState] = useState({
@@ -44,6 +45,15 @@ function AboutPage() {
       }));
     }
   };
+
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#1e40af', '#3b82f6', '#60a5fa', '#93c5fd'],
+    });
+  };
   
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -74,6 +84,9 @@ function AboutPage() {
           email: false,
           message: false
         });
+
+        // Trigger confetti celebration
+        triggerConfetti();
       } else {
         console.log("Error", data);
         setResult(data.message);

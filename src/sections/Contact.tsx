@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, MessageCircle } from 'lucide-react';
 import { Button } from '../components/ui/neon-button';
+import confetti from 'canvas-confetti';
 
 export const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -40,6 +41,15 @@ export const Contact: React.FC = () => {
       }));
     }
   };
+
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#1e40af', '#3b82f6', '#60a5fa', '#93c5fd'],
+    });
+  };
   
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -70,6 +80,9 @@ export const Contact: React.FC = () => {
           email: false,
           message: false
         });
+
+        // Trigger confetti celebration
+        triggerConfetti();
       } else {
         console.log("Error", data);
         setResult(data.message);
