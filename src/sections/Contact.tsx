@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
     setResult("Sending....");
     const formData = new FormData(event.currentTarget);
 
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "b4b6fe3a-054e-4624-bcde-da6e1bb58d60");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
