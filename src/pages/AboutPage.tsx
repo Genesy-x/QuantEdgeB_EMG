@@ -10,13 +10,13 @@ function AboutPage() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    comment: ''
+    message: ''
   });
   
   const [focused, setFocused] = useState({
     name: false,
     email: false,
-    comment: false
+    message: false
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,11 +53,20 @@ function AboutPage() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('https://formsubmit.io/send/quantedgeb@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/quantedgeb@gmail.com', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: 'New Contact Form Submission - QuantEdgeB',
+          _template: 'table'
+        })
       });
 
       if (!response.ok) throw new Error('Network response was not ok');
@@ -66,13 +75,13 @@ function AboutPage() {
       setFormState({
         name: '',
         email: '',
-        comment: ''
+        message: ''
       });
       
       setFocused({
         name: false,
         email: false,
-        comment: false
+        message: false
       });
       
       form.reset();
@@ -375,12 +384,12 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
                     
                     <div className="relative">
                       <textarea
-                        id="comment"
-                        name="comment"
-                        value={formState.comment}
+                        id="message"
+                        name="message"
+                        value={formState.message}
                         onChange={handleChange}
-                        onFocus={() => handleFocus('comment')}
-                        onBlur={() => handleBlur('comment')}
+                        onFocus={() => handleFocus('message')}
+                        onBlur={() => handleBlur('message')}
                         placeholder="Your message"
                         rows={5}
                         className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
@@ -390,15 +399,6 @@ And the daily challenge of outsmarting a market that <em>never sleeps</em>.
                         disabled={isSubmitting}
                       />
                     </div>
-                    
-                    {/* Honeypot field to prevent spam */}
-                    <input 
-                      name="_formsubmit_id" 
-                      type="text" 
-                      style={{ display: 'none' }}
-                      tabIndex={-1}
-                      autoComplete="off"
-                    />
                     
                     <Button
                       type="submit"
