@@ -116,7 +116,11 @@ See the market like an <strong>architect</strong> — and act like a <strong>pro
                     <img
                       src={section.image}
                       alt={section.title}
-                      className="w-full h-[300px] md:h-[400px] object-cover rounded-xl shadow-2xl"
+                      className={`w-full object-cover rounded-xl shadow-2xl ${
+                        index === 0 || index === 1 
+                          ? 'h-[250px] md:h-[350px]' 
+                          : 'h-[300px] md:h-[400px]'
+                      }`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
                   </div>
