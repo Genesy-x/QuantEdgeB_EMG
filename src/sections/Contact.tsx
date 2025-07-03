@@ -6,13 +6,13 @@ export const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    message: ''
+    comment: ''
   });
   
   const [focused, setFocused] = useState({
     name: false,
     email: false,
-    message: false
+    comment: false
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,20 +49,11 @@ export const Contact: React.FC = () => {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/quantedgeb@gmail.com', {
+      const response = await fetch('https://formsubmit.io/send/quantedgeb@gmail.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          ...data,
-          _subject: 'New Contact Form Submission - QuantEdgeB',
-          _template: 'table'
-        })
+        body: formData
       });
 
       if (!response.ok) throw new Error('Network response was not ok');
@@ -71,13 +62,13 @@ export const Contact: React.FC = () => {
       setFormState({
         name: '',
         email: '',
-        message: ''
+        comment: ''
       });
       
       setFocused({
         name: false,
         email: false,
-        message: false
+        comment: false
       });
       
       form.reset();
@@ -157,12 +148,12 @@ export const Contact: React.FC = () => {
               
               <div className="relative">
                 <textarea
-                  id="message"
-                  name="message"
-                  value={formState.message}
+                  id="comment"
+                  name="comment"
+                  value={formState.comment}
                   onChange={handleChange}
-                  onFocus={() => handleFocus('message')}
-                  onBlur={() => handleBlur('message')}
+                  onFocus={() => handleFocus('comment')}
+                  onBlur={() => handleBlur('comment')}
                   placeholder="Your message"
                   rows={5}
                   className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
@@ -172,6 +163,15 @@ export const Contact: React.FC = () => {
                   disabled={isSubmitting}
                 />
               </div>
+              
+              {/* Honeypot field to prevent spam */}
+              <input 
+                name="_formsubmit_id" 
+                type="text" 
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
               
               <Button
                 type="submit"
