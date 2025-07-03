@@ -187,7 +187,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between p-6 border-b border-gray-700/50">
             <div className="flex items-center">
               <img src="https://res.cloudinary.com/dq4flimtm/image/upload/v1749311877/G-removebg-preview_lrikjg.webp" alt="QuantEdgeB Logo" className="h-10 w-10 mr-2" />
-              <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-300">
+              <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 QuantEdgeB
               </span>
             </div>
