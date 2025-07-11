@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MessageCircle } from 'lucide-react';
+import { Send, MessageCircle, Calendar, ChevronDown } from 'lucide-react';
 import { Button } from '../components/ui/neon-button';
 import confetti from 'canvas-confetti';
 
@@ -10,17 +10,42 @@ export const Contact: React.FC = () => {
     message: ''
   });
   
+  const [schedulingFormState, setSchedulingFormState] = useState({
+    firstName: '',
+    email: '',
+    appointmentType: '',
+    objective: '',
+    xProfile: ''
+  });
+  
   const [focused, setFocused] = useState({
     name: false,
     email: false,
     message: false
   });
 
+  const [schedulingFocused, setSchedulingFocused] = useState({
+    firstName: false,
+    email: false,
+    appointmentType: false,
+    objective: false,
+    xProfile: false
+  });
+
   const [result, setResult] = useState("");
+  const [schedulingResult, setSchedulingResult] = useState("");
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleSchedulingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setSchedulingFormState(prev => ({
       ...prev,
       [name]: value
     }));
@@ -33,9 +58,25 @@ export const Contact: React.FC = () => {
     }));
   };
   
+  const handleSchedulingFocus = (field: string) => {
+    setSchedulingFocused(prev => ({
+      ...prev,
+      [field]: true
+    }));
+  };
+  
   const handleBlur = (field: string) => {
     if (!formState[field as keyof typeof formState]) {
       setFocused(prev => ({
+        ...prev,
+        [field]: false
+      }));
+    }
+  };
+
+  const handleSchedulingBlur = (field: string) => {
+    if (!schedulingFormState[field as keyof typeof schedulingFormState]) {
+      setSchedulingFocused(prev => ({
         ...prev,
         [field]: false
       }));
@@ -91,6 +132,77 @@ export const Contact: React.FC = () => {
       console.error('Form submission error:', error);
       setResult('There was an error sending your message. Please try again.');
     }
+  };
+  
+  const onSchedulingSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSchedulingResult("Sending....");
+    const formData = new FormData(event.currentTarget);
+
+    // Add scheduling-specific subject line with tags
+    const appointmentType = schedulingFormState.appointmentType;
+    const subjectTag = appointmentType === 'business' ? '[BUSINESS]' : '[CUSTOMER]';
+    formData.append("subject", `${subjectTag} New Scheduling Request from ${schedulingFormState.firstName}`);
+    
+    // TODO: Replace with your Web3Forms access key
+    formData.append("access_key", "YOUR_SCHEDULING_ACCESS_KEY_HERE");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSchedulingResult("Redirecting to calendar...");
+        
+        // Reset form state manually
+        setSchedulingFormState({
+          firstName: '',
+          email: '',
+          appointmentType: '',
+          objective: '',
+          xProfile: ''
+        });
+        
+        setSchedulingFocused({
+          firstName: false,
+          email: false,
+          appointmentType: false,
+          objective: false,
+          xProfile: false
+        });
+
+        // Trigger confetti celebration
+        triggerConfetti();
+        
+        // Redirect to appropriate Cal.com link based on appointment type
+        setTimeout(() => {
+          if (appointmentType === 'business') {
+            // TODO: Replace with your business Cal.com link
+            window.open('YOUR_BUSINESS_CAL_LINK_HERE?utm_source=form-scheduler', '_blank');
+          } else {
+            // TODO: Replace with your customer Cal.com link  
+            window.open('YOUR_CUSTOMER_CAL_LINK_HERE?utm_source=form-scheduler', '_blank');
+          }
+        }, 1000);
+        
+      } else {
+        console.log("Error", data);
+        setSchedulingResult(data.message);
+      }
+    } catch (error) {
+      console.error('Scheduling form submission error:', error);
+      setSchedulingResult('There was an error processing your request. Please try again.');
+    }
+  };
+
+  // Check if scheduling form is valid
+  const isSchedulingFormValid = () => {
+    const { firstName, email, appointmentType, objective } = schedulingFormState;
+    return firstName.trim() && email.trim() && appointmentType && objective.trim();
   };
   
   return (
@@ -206,6 +318,161 @@ export const Contact: React.FC = () => {
             </span>
           </div>
 
+        {/* Scheduling Form Section */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-blue-200">
+              Schedule a Call
+            </h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Ready to take the next step? Book a personalized call to discuss your trading goals and how we can help you achieve them.
+            </p>
+          </div>
+          
+          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
+            {schedulingResult && (
+              <div className={`mb-6 p-4 rounded-lg ${
+                schedulingResult === "Redirecting to calendar..." 
+                  ? "bg-green-900/20 border border-green-700" 
+                  : schedulingResult === "Sending...." 
+                    ? "bg-blue-900/20 border border-blue-700"
+                    : "bg-red-900/20 border border-red-700"
+              }`}>
+                <p className={
+                  schedulingResult === "Redirecting to calendar..." 
+                    ? "text-green-400" 
+                    : schedulingResult === "Sending...." 
+                      ? "text-blue-400"
+                      : "text-red-400"
+                }>
+                  {schedulingResult}
+                </p>
+              </div>
+            )}
+            
+            <form onSubmit={onSchedulingSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={schedulingFormState.firstName}
+                    onChange={handleSchedulingChange}
+                    onFocus={() => handleSchedulingFocus('firstName')}
+                    onBlur={() => handleSchedulingBlur('firstName')}
+                    placeholder="First Name"
+                    className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
+                             focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
+                             transition-all duration-300 text-white placeholder-gray-400"
+                    required
+                    disabled={schedulingResult === "Sending...."}
+                  />
+                </div>
+                
+                <div className="relative">
+                  <input
+                    type="email"
+                    id="schedulingEmail"
+                    name="email"
+                    value={schedulingFormState.email}
+                    onChange={handleSchedulingChange}
+                    onFocus={() => handleSchedulingFocus('email')}
+                    onBlur={() => handleSchedulingBlur('email')}
+                    placeholder="Email Address"
+                    className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
+                             focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
+                             transition-all duration-300 text-white placeholder-gray-400"
+                    required
+                    disabled={schedulingResult === "Sending...."}
+                  />
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="relative">
+                  <select
+                    id="appointmentType"
+                    name="appointmentType"
+                    value={schedulingFormState.appointmentType}
+                    onChange={handleSchedulingChange}
+                    onFocus={() => handleSchedulingFocus('appointmentType')}
+                    onBlur={() => handleSchedulingBlur('appointmentType')}
+                    className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
+                             focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
+                             transition-all duration-300 text-white appearance-none cursor-pointer"
+                    required
+                    disabled={schedulingResult === "Sending...."}
+                  >
+                    <option value="" disabled className="text-gray-400">Select Appointment Type</option>
+                    <option value="business" className="text-white bg-gray-800">I'm booking for my business</option>
+                    <option value="personal" className="text-white bg-gray-800">I'm booking for myself</option>
+                  </select>
+                  <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                </div>
+              </div>
+              
+              {/* Conditional X Profile Field - Only show for business */}
+              {schedulingFormState.appointmentType === 'business' && (
+                <div className="relative transition-all duration-300 ease-in-out">
+                  <input
+                    type="text"
+                    id="xProfile"
+                    name="xProfile"
+                    value={schedulingFormState.xProfile}
+                    onChange={handleSchedulingChange}
+                    onFocus={() => handleSchedulingFocus('xProfile')}
+                    onBlur={() => handleSchedulingBlur('xProfile')}
+                    placeholder="X (Twitter) Profile (Optional)"
+                    className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
+                             focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
+                             transition-all duration-300 text-white placeholder-gray-400"
+                    disabled={schedulingResult === "Sending...."}
+                  />
+                </div>
+              )}
+              
+              <div className="relative">
+                <textarea
+                  id="objective"
+                  name="objective"
+                  value={schedulingFormState.objective}
+                  onChange={handleSchedulingChange}
+                  onFocus={() => handleSchedulingFocus('objective')}
+                  onBlur={() => handleSchedulingBlur('objective')}
+                  placeholder="Objective of the Call"
+                  rows={4}
+                  className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-lg 
+                           focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 
+                           transition-all duration-300 text-white placeholder-gray-400 resize-none"
+                  required
+                  disabled={schedulingResult === "Sending...."}
+                />
+              </div>
+              
+              <Button
+                type="submit"
+                variant="default"
+                size="lg"
+                className={`w-full text-white transition-all duration-300 ${
+                  isSchedulingFormValid() && schedulingResult !== "Sending...." 
+                    ? 'opacity-100 shadow-lg hover:shadow-blue-500/25' 
+                    : 'opacity-50 cursor-not-allowed'
+                }`}
+                disabled={!isSchedulingFormValid() || schedulingResult === "Sending...."}
+              >
+                <div className="flex items-center justify-center">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  {schedulingResult === "Sending...." ? 'Processing...' : 'Schedule Call'}
+                </div>
+              </Button>
+            </form>
+            
+            <p className="text-center text-sm text-gray-500 mt-4">
+              After submitting, you'll be redirected to our calendar to choose your preferred time slot.
+            </p>
+          </div>
+        </div>
           {/* Right Column - X (Twitter) Contact */}
           <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800 flex flex-col justify-center">
             <div className="text-center">
