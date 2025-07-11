@@ -145,7 +145,7 @@ export const Contact: React.FC = () => {
     formData.append("subject", `${subjectTag} New Scheduling Request from ${schedulingFormState.firstName}`);
     
     // TODO: Replace with your Web3Forms access key
-    formData.append("access_key", "YOUR_SCHEDULING_ACCESS_KEY_HERE");
+    formData.append("access_key", "2e477eb2-ab99-4b70-93bd-a63e2d17a6ad");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -182,10 +182,10 @@ export const Contact: React.FC = () => {
         setTimeout(() => {
           if (appointmentType === 'business') {
             // TODO: Replace with your business Cal.com link
-            window.open('YOUR_BUSINESS_CAL_LINK_HERE?utm_source=form-scheduler', '_blank');
+            window.open('https://cal.com/genesy.x/15min?utm_source=form-scheduler', '_blank');
           } else {
             // TODO: Replace with your customer Cal.com link  
-            window.open('YOUR_CUSTOMER_CAL_LINK_HERE?utm_source=form-scheduler', '_blank');
+            window.open('https://cal.com/genesy.x/30min?utm_source=form-scheduler', '_blank');
           }
         }, 1000);
         
