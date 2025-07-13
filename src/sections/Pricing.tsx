@@ -236,46 +236,43 @@ export const Pricing: React.FC = () => {
       <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px] pointer-events-none" />
       
       <div className="max-w-[90rem] mx-auto relative">
+        {/* Floating toggle button - positioned absolutely */}
+        {!showQuantum ? (
+          <button
+            onClick={() => setShowQuantum(true)}
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
+                     hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-3 py-1 rounded-md
+                     border border-gray-700 hover:border-gray-500"
+          >
+            Wants more? →
+          </button>
+        ) : (
+          <button
+            onClick={() => setShowQuantum(false)}
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
+                     hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-3 py-1 rounded-md
+                     border border-gray-700 hover:border-gray-500 flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Plans
+          </button>
+        )}
+
         <div className="text-center mb-16">
           {!showQuantum ? (
             <>
-              <div className="flex justify-between items-start mb-4">
-                <div className="flex-1">
-                  <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-blue-200">
-                    Go Beyond Efficiency
-                  </h2>
-                </div>
-                <button
-                  onClick={() => setShowQuantum(true)}
-                  className="text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
-                           hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-3 py-1 rounded-md
-                           border border-gray-700 hover:border-gray-500"
-                >
-                  Wants more? →
-                </button>
-              </div>
+              <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-blue-200 mb-4">
+                Go Beyond Efficiency
+              </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Select the plan that best suits your trading needs and goals.
               </p>
             </>
           ) : (
             <>
-              <div className="flex justify-between items-start mb-4">
-                <div className="flex-1">
-                  <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-                    For Visionaries Who Want Capital Without the Work
-                  </h2>
-                </div>
-                <button
-                  onClick={() => setShowQuantum(false)}
-                  className="text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
-                           hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-3 py-1 rounded-md
-                           border border-gray-700 hover:border-gray-500 flex items-center gap-2"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  Back to Plans
-                </button>
-              </div>
+              <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 mb-4">
+                For Visionaries Who Want Capital Without the Work
+              </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Fully managed, ROI-focused, hands-free growth for serious capital.
               </p>
