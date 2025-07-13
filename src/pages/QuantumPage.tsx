@@ -254,7 +254,7 @@ function QuantumPage() {
             />
             <div className="relative h-full bg-black/80 backdrop-blur-sm rounded-[10px] p-12 border border-white/10">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                Not Just a Client — A Collaborator
+                Not Just a Client — A Legacy
               </h2>
               <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto">
                 Quantum gives you access to a curated network of high-level individuals.
