@@ -470,45 +470,46 @@ export const Pricing: React.FC = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    {/* Left Column - Features */}
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-6">What's Included:</h4>
-                      <ul className="space-y-4">
-                        {[
-                          "✅ All Alpha Perks Included",
-                          "🧠 Personal Strategy Design & Setup", 
-                          "📈 Capital Growth Without Labor",
-                          "📊 ROI-Based Performance Fees Only",
-                          "🛠️ Private Dashboard Access",
-                          "💬 Direct Line to Your Strategist"
-                        ].map((feature, idx) => (
-                          <li key={idx} className="text-gray-300 text-lg">
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {/* Right Column - Requirements */}
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
-                      <div className="space-y-4">
-                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                          <p className="text-white font-semibold">🪙 One-Time Setup Fee:</p>
-                          <p className="text-2xl font-bold text-white">1,000€</p>
-                        </div>
-                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                          <p className="text-white font-semibold">💼 Minimum Capital:</p>
-                          <p className="text-2xl font-bold text-white">50,000€</p>
-                        </div>
-                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                          <p className="text-white font-semibold">📞 Strategy Discussion:</p>
-                          <p className="text-gray-300">ROI Threshold, Strategy & Goals discussed on scheduled call</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+  {/* Left Column - Features */}
+  <div>
+    <h4 className="text-xl font-semibold text-white mb-6">What's Included:</h4>
+    <ul className="space-y-4">
+      {[
+        "✅ All Alpha Perks Included",
+        "🧠 Personal Strategy Design & Setup", 
+        "📈 Capital Growth Without Labor",
+        "📊 ROI-Based Performance Fees Only",
+        "🛠️ Private Dashboard Access",
+        "💬 Direct Line to Your Strategist"
+      ].map((feature, idx) => (
+        <li key={idx} className="text-gray-300 text-lg">
+          {feature}
+        </li>
+      ))}
+    </ul>
+  </div>
+  {/* Right Column - Requirements */}
+  <div>
+    <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
+    <div className="space-y-4">
+      <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+        <p className="text-white font-semibold">🪙 One-Time Setup Fee:</p>
+        <p className="text-2xl font-bold text-white">1,000€</p>
+      </div>
+      <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+        <p className="text-white font-semibold">💼 Minimum Capital:</p>
+        <p className="text-2xl font-bold text-white">50,000€</p>
+      </div>
+      <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+        <p className="text-white font-semibold">📞 Strategy Discussion:</p>
+        <p className="text-gray-300">ROI Threshold, Strategy & Goals discussed on scheduled call</p>
+      </div>
+    </div>
+  </div>
+</div>
+
                    
-                      </ul>
+
                   {/* CTA Buttons */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <Link to="/quantum">
