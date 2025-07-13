@@ -14,6 +14,7 @@ import { ArrowLeft } from 'lucide-react';
 export const Pricing: React.FC = () => {
   const [isMonthly, setIsMonthly] = useState(true);
   const [showQuantum, setShowQuantum] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
   const isDesktop = window.matchMedia('(min-width: 768px)').matches;
   const switchRef = useRef<HTMLButtonElement>(null);
   const [selectedVariant, setSelectedVariant] = useState<'trading' | 'multi'>('trading');
@@ -126,6 +127,20 @@ export const Pricing: React.FC = () => {
       console.error('Quantum form submission error:', error);
       setQuantumFormResult('There was an error. Please try again.');
     }
+  };
+
+  const handleBookCallClick = () => {
+    setIsRedirecting(true);
+    
+    // Redirect to Cal.com after a brief delay
+    setTimeout(() => {
+      window.open('https://cal.com/quantedgeb/quantumdiscovery', '_blank');
+    }, 500);
+
+    // Clear the redirecting message after 4 seconds
+    setTimeout(() => {
+      setIsRedirecting(false);
+    }, 4000);
   };
 
   // Get the appropriate href for Premium+ based on selected variant
@@ -541,9 +556,9 @@ export const Pricing: React.FC = () => {
                       variant="white"
                       size="lg"
                       className="w-full bg-black text-white rounded-md font-semibold"
-                      onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+                      onClick={handleBookCallClick}
                     >
-                      Book a Call
+                      {isRedirecting ? 'Redirecting to calendar...' : 'Book a Call'}
                     </Button>
                   </div>
                     </div>
