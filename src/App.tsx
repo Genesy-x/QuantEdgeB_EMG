@@ -14,6 +14,7 @@ import FundamentalPlanPage from './pages/FundamentalPlanPage';
 import PremiumPlanPage from './pages/PremiumPlanPage';
 import AlphaPlanPage from './pages/AlphaPlanPage';
 import DocumentationPage from './pages/DocumentationPage';
+import QuantumPage from './pages/QuantumPage';
 import InteractiveNeuralVortex from './components/ui/interactive-neural-vortex-background';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/plans/fundamental" element={<FundamentalPlanPage />} />
             <Route path="/plans/premium" element={<PremiumPlanPage />} />
             <Route path="/plans/alpha" element={<AlphaPlanPage />} />
+            <Route path="/quantum" element={<QuantumPage />} />
           </Routes>
           <Footer />
           <BackToTop />

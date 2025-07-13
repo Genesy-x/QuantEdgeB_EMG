@@ -148,6 +148,15 @@ export const Navbar: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-70"></span>
               </Link>
+              
+              <Link 
+                to="/quantum" 
+                className="text-gray-300 hover:text-white transition-colors relative group"
+              >
+                Quantum
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-70"></span>
+              </Link>
             </div>
             
             {/* Mobile menu button */}
