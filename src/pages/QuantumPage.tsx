@@ -86,22 +86,13 @@ function QuantumPage() {
           <GradientText
             colors={["#ffffff", "#f8f9fa", "#ffffff"]}
             animationSpeed={8}
-            className="text-5xl md:text-7xl font-serif font-bold mb-8"
+            className="text-4xl md:text-5xl font-bold mb-8"
           >
             Introducing: Quantum
           </GradientText>
           <h2 className="text-2xl md:text-3xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             A hands-free wealth protocol for elite capital
           </h2>
-          <Button
-            variant="white"
-            size="lg"
-            className="mx-auto text-black bg-white hover:bg-gray-100 rounded-md font-semibold"
-            onClick={handleBookCall}
-          >
-            Book a Private Call
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
         </motion.div>
 
         {/* Why Quantum Section */}

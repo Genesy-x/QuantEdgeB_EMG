@@ -14,6 +14,11 @@ const InteractiveNeuralVortex = () => {
       color2: [0.02, 0.7, 0.9],
       mixColor: [0.15, 0.0, 0.6]
     },
+    quantum: {
+      color1: [1.0, 1.0, 1.0],
+      color2: [0.9, 0.9, 0.9],
+      mixColor: [0.8, 0.8, 0.8]
+    },
     fundamental: {
       color1: [0.1, 0.3, 0.8],
       color2: [0.2, 0.5, 0.9],
