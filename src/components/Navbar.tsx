@@ -284,6 +284,14 @@ export const Navbar: React.FC = () => {
               >
                 <span className="text-lg">FAQ</span>
               </Link>
+              
+              <Link 
+                to="/quantum" 
+                className="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="text-lg">Quantum</span>
+              </Link>
             </nav>
           </div>
           

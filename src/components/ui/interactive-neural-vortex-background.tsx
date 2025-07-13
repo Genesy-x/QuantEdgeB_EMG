@@ -45,6 +45,10 @@ const InteractiveNeuralVortex = () => {
   const getCurrentColorScheme = () => {
     const path = location.pathname;
     
+    if (path === '/quantum') {
+      return 'quantum';
+    } else if (path === '/plans/fundamental') {
+    }
     if (path === '/plans/fundamental') {
       return 'fundamental';
     } else if (path === '/plans/alpha') {
