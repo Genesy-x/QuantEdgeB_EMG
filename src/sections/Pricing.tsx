@@ -481,14 +481,15 @@ export const Pricing: React.FC = () => {
     <h4 className="text-xl font-semibold text-white mb-6">What's Included:</h4>
     <ul className="space-y-4">
       {[
-        "✅ All Alpha Perks Included",
-        "🧠 Personal Strategy Design & Setup", 
-        "📈 Capital Growth Without Labor",
-        "📊 ROI-Based Performance Fees Only",
-        "🛠️ Private Dashboard Access",
-        "💬 Direct Line to Your Strategist"
+        "All Alpha Perks Included",
+        "Personal Strategy Design & Setup", 
+        "Capital Growth Without Labor",
+        "ROI-Based Performance Fees Only",
+        "Private Dashboard Access",
+        "Direct Line to Your Strategist"
       ].map((feature, idx) => (
-        <li key={idx} className="text-gray-300 text-lg">
+        <li key={idx} className="flex items-start text-gray-300 text-lg">
+          <span className="w-2 h-2 bg-white rounded-full mr-4 mt-2 flex-shrink-0"></span>
           {feature}
         </li>
       ))}
@@ -499,15 +500,24 @@ export const Pricing: React.FC = () => {
     <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
     <div className="space-y-4">
       <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-        <p className="text-white font-semibold">🪙 One-Time Setup Fee:</p>
+        <p className="text-white font-semibold flex items-center">
+          <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
+          One-Time Setup Fee:
+        </p>
         <p className="text-2xl font-bold text-white">1,000€</p>
       </div>
       <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-        <p className="text-white font-semibold">💼 Minimum Capital:</p>
+        <p className="text-white font-semibold flex items-center">
+          <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
+          Minimum Capital:
+        </p>
         <p className="text-2xl font-bold text-white">50,000€</p>
       </div>
       <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-        <p className="text-white font-semibold">📞 Strategy Discussion:</p>
+        <p className="text-white font-semibold flex items-center">
+          <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
+          Strategy Discussion:
+        </p>
         <p className="text-gray-300">ROI Threshold, Strategy & Goals discussed on scheduled call</p>
       </div>
     </div>
