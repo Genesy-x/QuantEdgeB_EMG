@@ -151,10 +151,9 @@ export const Navbar: React.FC = () => {
               
               <Link 
                 to="/quantum" 
-                className="text-gray-300 hover:text-white transition-colors relative group font-josefin font-bold text-lg tracking-wider"
+                className="text-gray-300 hover:text-white transition-colors relative group font-bold"
                 style={{
-                  textShadow: '0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6), 0 0 6px rgba(255, 255, 255, 0.4)',
-                  WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)'
+                  textShadow: '0 0 1px rgba(255, 255, 255, 0.3)'
                 }}
               >
                 Quantum
@@ -291,10 +290,9 @@ export const Navbar: React.FC = () => {
               
               <Link 
                 to="/quantum" 
-                className="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-josefin font-bold text-lg tracking-wider"
+                className="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-bold"
                 style={{
-                  textShadow: '0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6), 0 0 6px rgba(255, 255, 255, 0.4)',
-                  WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)'
+                  textShadow: '0 0 1px rgba(255, 255, 255, 0.3)'
                 }}
                 onClick={() => setMobileMenuOpen(false)}
               >
