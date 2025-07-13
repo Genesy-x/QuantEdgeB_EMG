@@ -486,6 +486,8 @@ export const Pricing: React.FC = () => {
                             {feature}
                           </li>
                         ))}
+                      </ul>
+                    </div>
                     {/* Right Column - Requirements */}
                     <div>
                       <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
