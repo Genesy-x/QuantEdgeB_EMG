@@ -496,7 +496,7 @@ export const Pricing: React.FC = () => {
     <h4 className="text-xl font-semibold text-white mb-6">What's Included:</h4>
     <ul className="space-y-4">
       {[
-        "All Alpha Perks Included",
+        "Everything in Alpha",
         "Personal Strategy Design & Setup", 
         "Capital Growth Without Labor",
         "ROI-Based Performance Fees Only",
