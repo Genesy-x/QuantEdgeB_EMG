@@ -533,7 +533,7 @@ export const Pricing: React.FC = () => {
                     <Button
                       variant="ghost"
                       size="lg"
-                      className="w-full bg-white-890 text-black hover:bg-gray-200 rounded-md font-semibold"
+                      className="w-full bg-black text-white hover:bg-gray-200 rounded-md font-semibold"
                       onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Book a Call
