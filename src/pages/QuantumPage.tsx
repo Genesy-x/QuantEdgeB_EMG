@@ -257,7 +257,7 @@ function QuantumPage() {
                 Not Just a Client — A Legacy
               </h2>
               <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto">
-                Quantum gives you access to a curated network of high-level individuals.
+                Quantum gives you access to a curated network of high-level individuals.<br/>
                 From idea sharing to potential joint ventures — this is more than trading.
               </p>
             </div>
