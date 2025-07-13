@@ -523,7 +523,7 @@ export const Pricing: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <Link to="/quantum">
                       <Button
-                        variant="default"
+                        variant="white"
                         size="lg"
                         className="w-full text-white border border-white/30 hover:border-white/50  rounded-md"
                       >
@@ -531,7 +531,7 @@ export const Pricing: React.FC = () => {
                       </Button> 
                     </Link> 
                     <Button
-                      variant="default"
+                      variant="white"
                       size="lg"
                       className="w-full bg-black text-white rounded-md font-semibold"
                       onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
