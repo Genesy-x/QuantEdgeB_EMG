@@ -68,6 +68,9 @@ export default {
         "color-4": "hsl(var(--color-4))",
         "color-5": "hsl(var(--color-5))",
       },
+      fontFamily: {
+        'josefin': ['Josefin Sans', 'sans-serif'],
+      },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
