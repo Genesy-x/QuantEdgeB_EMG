@@ -151,7 +151,11 @@ export const Navbar: React.FC = () => {
               
               <Link 
                 to="/quantum" 
-                className="text-gray-300 hover:text-white transition-colors relative group"
+                className="text-gray-300 hover:text-white transition-colors relative group font-josefin font-bold text-lg tracking-wider"
+                style={{
+                  textShadow: '0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6), 0 0 6px rgba(255, 255, 255, 0.4)',
+                  WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)'
+                }}
               >
                 Quantum
                 <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
