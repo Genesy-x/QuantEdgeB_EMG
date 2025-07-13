@@ -531,7 +531,7 @@ export const Pricing: React.FC = () => {
                       </Button> 
                     </Link> 
                     <Button
-                      variant="ghost"
+                      variant="default"
                       size="lg"
                       className="w-full bg-black text-white rounded-md font-semibold"
                       onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
