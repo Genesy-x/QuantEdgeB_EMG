@@ -621,7 +621,7 @@ export const Pricing: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            
           )}
         </motion.div>
       </div>
