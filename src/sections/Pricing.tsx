@@ -505,7 +505,7 @@ export const Pricing: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                    </div>
+                  
                       </ul>
                   {/* CTA Buttons */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
