@@ -453,6 +453,15 @@ export const Pricing: React.FC = () => {
             /* Quantum Plan Section */
             <div className="max-w-4xl mx-auto">
               <div className="relative h-full rounded-2xl border-[0.75px] border-white/20 p-0.5">
+               <GlowingEffect
+                 spread={40}
+                 glow={true}
+                 disabled={false}
+                 proximity={64}
+                 inactiveZone={0.01}
+                 borderWidth={2}
+                 variant="white"
+               />
                 <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-white/20 rounded-2xl blur-xl opacity-50"></div>
                 <div className="relative h-full flex flex-col bg-black/80 backdrop-blur-sm rounded-[10px] p-8 md:p-12 border border-white/10">
                   {/* Quantum Badge */}
