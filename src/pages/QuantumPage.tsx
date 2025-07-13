@@ -308,8 +308,10 @@ function QuantumPage() {
                   className="w-full text-white border border-white/30 hover:border-white/50 rounded-md"
                   onClick={handleBookCall}
                 >
-                  Book Your Private Call
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <div className="flex items-center justify-center">
+                    Book Your Private Call
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </div>
                 </Button>
                 <Button
                   variant="white"
@@ -317,7 +319,9 @@ function QuantumPage() {
                   className="w-full text-white border border-white/30 hover:border-white/50 rounded-md"
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                  Learn More
+                  <div className="flex items-center justify-center">
+                    Learn More
+                  </div>
                 </Button>
               </div>
             </div>
@@ -344,8 +348,10 @@ function QuantumPage() {
             className="text-white border border-white/30 hover:border-white/50 rounded-md"
             onClick={handleBookCall}
           >
-            Book a Strategy Call
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <div className="flex items-center justify-center">
+              Book a Strategy Call
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </div>
           </Button>
         </motion.div>
       </div>
