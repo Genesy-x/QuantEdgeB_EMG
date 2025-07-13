@@ -460,7 +460,7 @@ export const Pricing: React.FC = () => {
                  proximity={64}
                  inactiveZone={0.01}
                  borderWidth={2}
-                 variant="white"
+                 
                />
                 <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-white/20 rounded-2xl blur-xl opacity-50"></div>
                 <div className="relative h-full flex flex-col bg-black/80 backdrop-blur-sm rounded-[10px] p-8 md:p-12 border border-white/10">
