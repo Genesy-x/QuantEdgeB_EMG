@@ -525,7 +525,7 @@ export const Pricing: React.FC = () => {
                       <Button
                         variant="ghost"
                         size="lg"
-                        className="w-full text-white border border-white/30 hover:border-white/50  rounded-md"
+                        className="w-full text-white border border-white/30   rounded-md"
                       >
                         Learn More
                       </Button>
