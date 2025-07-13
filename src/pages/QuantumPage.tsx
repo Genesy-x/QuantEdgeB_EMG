@@ -86,7 +86,7 @@ function QuantumPage() {
           <GradientText
             colors={["#ffffff", "#f8f9fa", "#ffffff"]}
             animationSpeed={8}
-            className="text-4xl md:text-5xl font-bold mb-8"
+            className="text-8xl md:text-5xl font-bold mb-8"
           >
             Introducing: Quantum
           </GradientText>
