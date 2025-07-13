@@ -523,7 +523,7 @@ export const Pricing: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <Link to="/quantum">
                       <Button
-                        variant="ghost"
+                        variant="default"
                         size="lg"
                         className="w-full text-white border border-white/30 hover:border-white/50  rounded-md"
                       >
