@@ -119,7 +119,7 @@ function QuantumPage() {
             </div>
 
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 More Than Just Management — Mastery
               </h2>
               <p className="text-gray-200 mb-8 text-lg leading-relaxed">
@@ -148,7 +148,7 @@ function QuantumPage() {
           className="mb-32"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               A Plan As Unique As Your Objectives
             </h2>
             <p className="text-gray-300 max-w-4xl mx-auto text-lg leading-relaxed">
@@ -213,7 +213,7 @@ function QuantumPage() {
             </div>
 
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Support That Scales With You
               </h2>
               <p className="text-gray-200 mb-8 text-lg leading-relaxed">
@@ -253,7 +253,7 @@ function QuantumPage() {
               variant="white"
             />
             <div className="relative h-full bg-black/80 backdrop-blur-sm rounded-[10px] p-12 border border-white/10">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Not Just a Client — A Collaborator
               </h2>
               <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto">
@@ -273,7 +273,7 @@ function QuantumPage() {
           className="mb-32"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Entry Requirements
             </h2>
           </div>
@@ -305,7 +305,7 @@ function QuantumPage() {
                 <Button
                   variant="white"
                   size="lg"
-                  className="w-full bg-white text-black hover:bg-gray-100 rounded-md font-semibold"
+                  className="w-full text-white border border-white/30 hover:border-white/50 rounded-md"
                   onClick={handleBookCall}
                 >
                   Book Your Private Call
@@ -332,7 +332,7 @@ function QuantumPage() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Is Quantum Right for You?
           </h2>
           <p className="text-gray-300 mb-8 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -341,7 +341,7 @@ function QuantumPage() {
           <Button
             variant="white"
             size="lg"
-            className="bg-white text-black hover:bg-gray-100 rounded-md font-semibold"
+            className="text-white border border-white/30 hover:border-white/50 rounded-md"
             onClick={handleBookCall}
           >
             Book a Strategy Call
