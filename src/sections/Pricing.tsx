@@ -486,6 +486,169 @@ export const Pricing: React.FC = () => {
                             {feature}
                           </li>
                         ))}
+                      </ul>
+                    </div>
+                    
+                    {/* Right Column - Requirements */}
+                    <div>
+                      <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
+                      <div className="space-y-4">
+                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                          <p className="text-white font-semibold">🪙 One-Time Setup Fee:</p>
+                          <p className="text-2xl font-bold text-white">1,000€</p>
+                        </div>
+                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                          <p className="text-white font-semibold">💼 Minimum Capital:</p>
+                          <p className="text-2xl font-bold text-white">50,000€</p>
+                        </div>
+                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                          <p className="text-white font-semibold">📞 Strategy Discussion:</p>
+                          <p className="text-gray-300">ROI Threshold, Strategy & Goals discussed on scheduled call</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* CTA Buttons */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <Link to="/quantum">
+                      <Button
+                        variant="ghost"
+                        size="lg"
+                        className="w-full text-white border border-white/30 hover:border-white/50 hover:bg-white/10 rounded-md"
+                      >
+                        Learn More
+                      </Button>
+                    </Link>
+                    <Button
+                      variant="default"
+                      size="lg"
+                      className="w-full bg-white text-black hover:bg-gray-200 rounded-md font-semibold"
+                      onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Book a Call
+                    </Button>
+                  </div>
+                  
+                  {/* Pre-Screening Form */}
+                  <div id="quantum-form" className="bg-white/5 p-6 rounded-lg border border-white/10">
+                    <h4 className="text-xl font-semibold text-white mb-4">Pre-Screening Form</h4>
+                    <p className="text-gray-300 mb-6 text-sm">
+                      Please provide some details before we schedule your call.
+                    </p>
+                    
+                    {quantumFormResult && (
+                      <div className={`mb-6 p-4 rounded-lg ${
+                        quantumFormResult === "Redirecting to calendar..." 
+                          ? "bg-green-900/20 border border-green-700" 
+                          : quantumFormResult === "Processing..." 
+                            ? "bg-blue-900/20 border border-blue-700"
+                            : "bg-red-900/20 border border-red-700"
+                      }`}>
+                        <p className={
+                          quantumFormResult === "Redirecting to calendar..." 
+                            ? "text-green-400" 
+                            : quantumFormResult === "Processing..." 
+                              ? "text-blue-400"
+                              : "text-red-400"
+                        }>
+                          {quantumFormResult}
+                        </p>
+                      </div>
+                    )}
+                    
+                    <form onSubmit={handleQuantumFormSubmit} className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input
+                          type="text"
+                          name="firstName"
+                          value={quantumFormData.firstName}
+                          onChange={handleQuantumFormChange}
+                          placeholder="First Name"
+                          className="w-full p-3 bg-white/10 border border-white/20 rounded-lg 
+                                   focus:border-white/40 focus:outline-none focus:ring-1 focus:ring-white/40 
+                                   transition-all duration-300 text-white placeholder-gray-400"
+                          required
+                          disabled={quantumFormResult === "Processing..."}
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          value={quantumFormData.email}
+                          onChange={handleQuantumFormChange}
+                          placeholder="Email Address"
+                          className="w-full p-3 bg-white/10 border border-white/20 rounded-lg 
+                                   focus:border-white/40 focus:outline-none focus:ring-1 focus:ring-white/40 
+                                   transition-all duration-300 text-white placeholder-gray-400"
+                          required
+                          disabled={quantumFormResult === "Processing..."}
+                        />
+                      </div>
+                      <input
+                        type="text"
+                        name="capitalAmount"
+                        value={quantumFormData.capitalAmount}
+                        onChange={handleQuantumFormChange}
+                        placeholder="Capital Amount (Optional)"
+                        className="w-full p-3 bg-white/10 border border-white/20 rounded-lg 
+                                 focus:border-white/40 focus:outline-none focus:ring-1 focus:ring-white/40 
+                                 transition-all duration-300 text-white placeholder-gray-400"
+                        disabled={quantumFormResult === "Processing..."}
+                      />
+                      <textarea
+                        name="objective"
+                        value={quantumFormData.objective}
+                        onChange={handleQuantumFormChange}
+                        placeholder="Objective for the call"
+                        rows={3}
+                        className="w-full p-3 bg-white/10 border border-white/20 rounded-lg 
+                                 focus:border-white/40 focus:outline-none focus:ring-1 focus:ring-white/40 
+                                 transition-all duration-300 text-white placeholder-gray-400 resize-none"
+                        required
+                        disabled={quantumFormResult === "Processing..."}
+                      />
+                      <Button
+                        type="submit"
+                        variant="default"
+                        size="lg"
+                        className="w-full bg-white text-black hover:bg-gray-200 rounded-md font-semibold"
+                        disabled={quantumFormResult === "Processing..." || !quantumFormData.firstName || !quantumFormData.email || !quantumFormData.objective}
+                      >
+                        {quantumFormResult === "Processing..." ? 'Processing...' : 'Submit & Schedule Call'}
+                      </Button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+                    {/* Right Column - Requirements */}
+                    <div>
+                      <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
+                      <div className="space-y-4">
+                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                          <p className="text-white font-semibold">🪙 One-Time Setup Fee:</p>
+                          <p className="text-2xl font-bold text-white">1,000€</p>
+                        </div>
+                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                          <p className="text-white font-semibold">💼 Minimum Capital:</p>
+                          <p className="text-2xl font-bold text-white">50,000€</p>
+                        </div>
+                        <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                          <p className="text-white font-semibold">📞 Strategy Discussion:</p>
+                          <p className="text-gray-300">ROI Threshold, Strategy & Goals discussed on scheduled call</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      </ul>
+                  {/* CTA Buttons */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {/* Right Column - Requirements */}
                     <div>
                       <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
