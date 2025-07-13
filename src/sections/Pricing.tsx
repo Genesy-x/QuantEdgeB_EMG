@@ -500,7 +500,7 @@ export const Pricing: React.FC = () => {
         "Personal Strategy Design & Setup", 
         "Capital Growth Without Labor",
         "ROI-Based Performance Fees Only",
-        "Private Dashboard Access",
+        "Continuous Reports",
         "Direct Line to Your Strategist"
       ].map((feature, idx) => (
         <li key={idx} className="flex items-start text-gray-300 text-lg">
