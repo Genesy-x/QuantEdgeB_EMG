@@ -501,7 +501,8 @@ export const Pricing: React.FC = () => {
         "Capital Growth Without Labor",
         "ROI-Based Performance Fees Only",
         "Continuous Reports",
-        "Direct Line to Your Strategists"
+        "Direct Line to Your Strategists",
+        "Private Group with other Quantum Members"
       ].map((feature, idx) => (
         <li key={idx} className="flex items-start text-gray-300 text-lg">
           <span className="w-2 h-2 bg-white rounded-full mr-4 mt-2 flex-shrink-0"></span>
