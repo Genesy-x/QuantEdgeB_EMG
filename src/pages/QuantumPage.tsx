@@ -90,7 +90,7 @@ function QuantumPage() {
           >
             PRIVATE   WEALTH  <br/> MANAGEMENT
           </GradientText> 
-          <h2 className="text-2xl md:text-3xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-1xl md:text-3xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             A hands-free wealth protocol for elite capital
           </h2>
         </motion.div>
