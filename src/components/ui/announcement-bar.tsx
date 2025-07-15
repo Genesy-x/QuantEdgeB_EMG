@@ -14,7 +14,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
@@ -22,7 +22,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
@@ -30,7 +30,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
@@ -38,7 +38,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
@@ -46,7 +46,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
@@ -54,7 +54,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
