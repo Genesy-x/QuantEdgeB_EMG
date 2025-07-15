@@ -47,7 +47,7 @@ function QuantumPage() {
     },
     {
       icon: <Users className="h-5 w-5" />,
-      text: "Private Telegram Channel for Quantum members only"
+      text: "Private Telegram Channel for Elite members only"
     }
   ];
 
@@ -123,7 +123,7 @@ function QuantumPage() {
                 More Than Just Management — Mastery
               </h2>
               <p className="text-gray-200 mb-8 text-lg leading-relaxed">
-                Quantum includes all perks from Alpha — and elevates them.
+                Elite includes all perks from Alpha — and elevates them.
                 Your capital is deployed with elite precision, under a personalized strategy made for your goals.
                 You'll also learn just enough to remain aware, calm, and in control — even when the markets go wild.
               </p>
