@@ -81,7 +81,7 @@ function QuantumPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-32 min-h-[60vh] flex flex-col justify-center"
+          className="text-center mb-26 min-h-[60vh] flex flex-col justify-center"
         >
           <GradientText
             colors={["#ffffff", "#f8f9fa", "#ffffff"]}
