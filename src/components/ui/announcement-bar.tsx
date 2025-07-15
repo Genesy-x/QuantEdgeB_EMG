@@ -6,7 +6,7 @@ export const AnnouncementBar: React.FC = () => {
       <div className="flex items-center h-full">
         <div className="animate-scroll flex items-center whitespace-nowrap min-w-full">
           <span className="text-gray-300 text-sm font-medium px-8">
-            🎁 Get Free Indicators - Limited Time Offer
+            🎁 Get Free Indicators - Check our Documentation Page to get yours!
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
