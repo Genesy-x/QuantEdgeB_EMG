@@ -88,7 +88,7 @@ function QuantumPage() {
             animationSpeed={8}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 font-josefin"
           >
-            P R I V A T E   W E A L T H   M A N A G E M E N T
+            PRIVATE   WEALTH   MANAGEMENT
           </GradientText>
           <h2 className="text-2xl md:text-3xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             A hands-free wealth protocol for elite capital
