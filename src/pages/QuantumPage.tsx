@@ -257,7 +257,7 @@ function QuantumPage() {
                 Not Just a Client — A Legacy
               </h2>
               <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto">
-                Quantum gives you access to a curated network of high-level individuals.<br/>
+                Elite gives you access to a curated network of high-level individuals.<br/>
                 From idea sharing to potential joint ventures — this is more than trading.
               </p>
             </div>
@@ -329,7 +329,7 @@ function QuantumPage() {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Is Quantum Right for You?
+            Is Elite Right for You?
           </h2>
           <p className="text-gray-300 mb-8 text-lg max-w-3xl mx-auto leading-relaxed">
             You'll schedule a private call, choose your objective, and gain access to a financial architecture built to scale your wealth.
