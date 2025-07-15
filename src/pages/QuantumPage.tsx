@@ -86,7 +86,7 @@ function QuantumPage() {
           <GradientText
             colors={["#ffffff", "#f8f9fa", "#ffffff"]}
             animationSpeed={8}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 font-josefin"
+            className="text-5xl sm:text-6xl md:text-5xl lg:text-8xl font-bold mb-8 font-josefin"
           >
             PRIVATE   WEALTH   MANAGEMENT
           </GradientText>
