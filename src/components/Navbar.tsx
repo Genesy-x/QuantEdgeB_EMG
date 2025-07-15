@@ -78,8 +78,9 @@ export const Navbar: React.FC = () => {
             <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
               <HeroPill 
                 href="/documentation"
-                label="Get Free Indicators"
-                announcement="🎁 Free"
+               label=""
+               announcement=""
+               animated={true}
                 className="bg-gradient-to-r from-blue-950/60 via-blue-900/70 to-blue-950/60 backdrop-blur-lg ring-1 ring-blue-400/30 border border-blue-500/20 shadow-lg shadow-blue-900/30 [&_div]:bg-gradient-to-r [&_div]:from-blue-400/95 [&_div]:to-blue-500/95 [&_div]:text-blue-950 [&_div]:font-semibold [&_div]:shadow-sm [&_div]:backdrop-blur-sm [&_p]:text-blue-100 [&_p]:font-medium [&_svg_path]:fill-blue-100 hover:ring-blue-400/50 hover:shadow-blue-900/50 hover:[&_div]:from-blue-300/100 hover:[&_div]:to-blue-400/100 hover:[&_p]:text-white hover:[&_svg_path]:fill-white transition-all duration-300"
               />
             </div>
@@ -218,8 +219,9 @@ export const Navbar: React.FC = () => {
             <div className="px-6 mb-6">
               <HeroPill 
                 href="/documentation"
-                label="Get Free Indicators"
-                announcement="🎁 Free"
+               label=""
+               announcement=""
+               animated={true}
                 className="w-full justify-center bg-gradient-to-r from-blue-950/60 via-blue-900/70 to-blue-950/60 backdrop-blur-lg ring-1 ring-blue-400/30 border border-blue-500/20 shadow-lg shadow-blue-900/30 [&_div]:bg-gradient-to-r [&_div]:from-blue-400/95 [&_div]:to-blue-500/95 [&_div]:text-blue-950 [&_div]:font-semibold [&_div]:shadow-sm [&_div]:backdrop-blur-sm [&_p]:text-blue-100 [&_p]:font-medium [&_svg_path]:fill-blue-100 hover:ring-blue-400/50 hover:shadow-blue-900/50 hover:[&_div]:from-blue-300/100 hover:[&_div]:to-blue-400/100 hover:[&_p]:text-white hover:[&_svg_path]:fill-white transition-all duration-300"
               />
             </div>
