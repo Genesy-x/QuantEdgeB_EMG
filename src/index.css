@@ -151,3 +151,16 @@ body {
 .btn-glow:hover {
   box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
 }
+/* Announcement bar sliding animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}

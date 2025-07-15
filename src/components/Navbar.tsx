@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, X, Menu, Twitter, Globe, Bitcoin } from 'lucide-react';
-import { HeroPill } from './ui/hero-pill';
+import { AnnouncementBar } from './ui/announcement-bar';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -60,10 +60,11 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
+      <AnnouncementBar />
       <nav 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
-        }`}
+        } mt-8`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -75,15 +76,6 @@ export const Navbar: React.FC = () => {
             </Link>
             
             {/* Center - Announcement Button (Desktop only) */}
-            <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
-              <HeroPill 
-                href="/documentation"
-               label=""
-               announcement=""
-               animated={true}
-                className="bg-gradient-to-r from-blue-950/60 via-blue-900/70 to-blue-950/60 backdrop-blur-lg ring-1 ring-blue-400/30 border border-blue-500/20 shadow-lg shadow-blue-900/30 [&_div]:bg-gradient-to-r [&_div]:from-blue-400/95 [&_div]:to-blue-500/95 [&_div]:text-blue-950 [&_div]:font-semibold [&_div]:shadow-sm [&_div]:backdrop-blur-sm [&_p]:text-blue-100 [&_p]:font-medium [&_svg_path]:fill-blue-100 hover:ring-blue-400/50 hover:shadow-blue-900/50 hover:[&_div]:from-blue-300/100 hover:[&_div]:to-blue-400/100 hover:[&_p]:text-white hover:[&_svg_path]:fill-white transition-all duration-300"
-              />
-            </div>
             
             {/* Desktop menu */}
             <div className="hidden md:flex items-center space-x-8">
@@ -215,16 +207,6 @@ export const Navbar: React.FC = () => {
           
           {/* Menu items */}
           <div className="flex-1 overflow-y-auto py-6">
-            {/* Mobile Announcement Button */}
-            <div className="px-6 mb-6">
-              <HeroPill 
-                href="/documentation"
-               label=""
-               announcement=""
-               animated={true}
-                className="w-full justify-center bg-gradient-to-r from-blue-950/60 via-blue-900/70 to-blue-950/60 backdrop-blur-lg ring-1 ring-blue-400/30 border border-blue-500/20 shadow-lg shadow-blue-900/30 [&_div]:bg-gradient-to-r [&_div]:from-blue-400/95 [&_div]:to-blue-500/95 [&_div]:text-blue-950 [&_div]:font-semibold [&_div]:shadow-sm [&_div]:backdrop-blur-sm [&_p]:text-blue-100 [&_p]:font-medium [&_svg_path]:fill-blue-100 hover:ring-blue-400/50 hover:shadow-blue-900/50 hover:[&_div]:from-blue-300/100 hover:[&_div]:to-blue-400/100 hover:[&_p]:text-white hover:[&_svg_path]:fill-white transition-all duration-300"
-              />
-            </div>
             
             <nav className="px-6 space-y-2">
               <Link 
