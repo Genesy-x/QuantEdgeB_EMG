@@ -478,12 +478,12 @@ export const Pricing: React.FC = () => {
                 <div className="relative h-full flex flex-col bg-black/80 backdrop-blur-sm rounded-[10px] p-8 md:p-12 border border-white/10">
                   {/* Quantum Badge */}
                   <div className="absolute top-0 right-0 bg-gradient-to-r from-white to-gray-300 text-black py-1 px-3 rounded-bl-xl rounded-tr-xl flex items-center">
-                    <span className="text-black font-bold text-sm">QUANTUM</span>
+                    <span className="text-black font-bold text-sm">ELITE</span>
                   </div>
                   
                   <div className="text-center mb-8">
                     <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                      Quantum
+                      Elite
                     </h3>
                     <p className="text-xl text-gray-300 mb-8">
                       Fully Managed. ROI-Focused. Hands-Free Growth.
