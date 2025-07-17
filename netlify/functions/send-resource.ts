@@ -86,20 +86,23 @@ html: `
       </a>
     </div>
 
-    <!-- ✅ New Discord Access Section -->
-    <div style="margin: 30px 0; padding: 20px; background-color: #111827; border-radius: 8px; border-left: 4px solid #3b82f6;">
-      <h3 style="color: #60a5fa; margin-top: 0;">Join Our Inner Circle</h3>
-      <p style="color: #d1d5db; font-size: 14px; margin-bottom: 16px;">
-        As part of your free value pack, you now have access to our <strong style="color: #ffffff;">Discord community</strong> as an <strong style="color: #60a5fa;">Edge Explorer</strong>.  
-        Get exclusive insight into our market discussions, daily breakdowns, and connect with others walking the same path.
-      </p>
-      <a href="YOUR_DISCORD_INVITE_LINK_HERE" 
-         target="_blank" 
-         style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
-        🔗 Join the Discord Server
-      </a>
-    </div>
-    <!-- End Discord Section -->
+<!-- ✅ New Discord Access Section -->
+<div style="margin: 30px 0; padding: 20px; background-color: #111827; border-radius: 8px; border-left: 4px solid #3b82f6;">
+  <h3 style="color: #60a5fa; margin-top: 0;">Join Our Inner Circle</h3>
+  <p style="color: #d1d5db; font-size: 14px; margin-bottom: 16px;">
+    As part of your free value pack, you now have access to our <strong style="color: #ffffff;">Discord community</strong> as an <strong style="color: #60a5fa;">Explorer</strong>.
+    Get exclusive insight into our market discussions, daily breakdowns, and connect with others walking the same path.<br><br>
+    Once inside, please tag us as <strong style="color: #ffffff;">@Admins</strong> to receive your Explorer role!<br>
+    If you encounter any issues, you can always reach out to us on X or via <a href="mailto:quantedgeb@gmail.com" style="color: #3b82f6; text-decoration: none;">quantedgeb@gmail.com</a>.
+  </p>
+  <a href="https://discord.gg/ChPxcwvVb9" 
+     target="_blank" 
+     style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
+    🔗 Join the Discord Server
+  </a>
+</div>
+<!-- End Discord Section -->
+
 
     <p style="font-size: 14px; color: #9ca3af;">– The QuantEdgeB Team</p>
     
