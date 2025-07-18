@@ -487,19 +487,19 @@ export const Pricing: React.FC = () => {
             </div>
           ) : (
             /* Quantum Plan Section */
-            <div className="max-w-4xl mx-auto">
-              <div className="relative h-full rounded-2xl border-[0.75px] border-white/20 p-0.5">
+            <div className="max-w-4xl mx-auto will-change-transform">
+              <div className="relative h-full rounded-2xl border-[0.75px] border-white/20 p-0.5 transform-gpu">
                <GlowingEffect
-                 spread={40}
+                 spread={30}
                  glow={true}
                  disabled={false}
-                 proximity={64}
-                 inactiveZone={0.01}
-                 borderWidth={2}
+                 proximity={48}
+                 inactiveZone={0.02}
+                 borderWidth={1}
                  variant="white"
                />
-                <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-white/20 rounded-2xl blur-xl opacity-50"></div>
-                <div className="relative h-full flex flex-col bg-black/80 backdrop-blur-sm rounded-[10px] p-8 md:p-12 border border-white/10">
+                <div className="absolute -inset-1 bg-gradient-to-r from-white/8 to-white/15 rounded-2xl blur-lg opacity-40 will-change-transform"></div>
+                <div className="relative h-full flex flex-col bg-black/85 backdrop-blur-[2px] rounded-[10px] p-8 md:p-12 border border-white/10 transform-gpu">
                   {/* Quantum Badge */}
                   <div className="absolute top-0 right-0 bg-gradient-to-r from-white to-gray-300 text-black py-1 px-3 rounded-bl-xl rounded-tr-xl flex items-center">
                     <span className="text-black font-bold text-sm">ELITE</span>
@@ -516,7 +516,7 @@ export const Pricing: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
   {/* Left Column - Features */}
-  <div>
+  <div className="transform-gpu">
     <h4 className="text-xl font-semibold text-white mb-6">What's Included:</h4>
     <ul className="space-y-4">
       {[
@@ -536,24 +536,24 @@ export const Pricing: React.FC = () => {
     </ul>
   </div>
   {/* Right Column - Requirements */}
-  <div>
+  <div className="transform-gpu">
     <h4 className="text-xl font-semibold text-white mb-6">Requirements:</h4>
     <div className="space-y-4">
-      <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+      <div className="bg-white/5 p-4 rounded-lg border border-white/10 transform-gpu">
         <p className="text-white font-semibold flex items-center">
           <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
           One-Time Setup Fee:
         </p>
         <p className="text-2xl font-bold text-white">1,000€</p>
       </div>
-      <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+      <div className="bg-white/5 p-4 rounded-lg border border-white/10 transform-gpu">
         <p className="text-white font-semibold flex items-center">
           <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
           Minimum Capital:
         </p>
         <p className="text-2xl font-bold text-white">50,000€</p>
       </div>
-      <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+      <div className="bg-white/5 p-4 rounded-lg border border-white/10 transform-gpu">
         <p className="text-white font-semibold flex items-center">
           <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
           Strategy Discussion:
