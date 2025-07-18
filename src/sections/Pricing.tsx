@@ -251,11 +251,35 @@ export const Pricing: React.FC = () => {
       <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px] pointer-events-none" />
       
       <div className="max-w-[90rem] mx-auto relative">
-        {/* Floating toggle button - positioned absolutely */}
-        {!showQuantum ? (
+        {/* Mobile toggle buttons - shown below switch on mobile */}
+        <div className="flex md:hidden justify-center mb-8">
+          {!showQuantum ? (
+            <button
+              onClick={() => setShowQuantum(true)}
+              className="text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
+                       hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-4 py-2 rounded-md
+                       border border-gray-700 hover:border-gray-500"
+            >
+              Wants more? →
+            </button>
+          ) : (
+            <button
+              onClick={() => setShowQuantum(false)}
+              className="text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
+                       hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-4 py-2 rounded-md
+                       border border-gray-700 hover:border-gray-500 flex items-center gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Plans
+            </button>
+          )}
+        </div>
+
+        {/* Desktop toggle buttons - positioned absolutely on desktop only */}
+        {!showQuantum && (
           <button
             onClick={() => setShowQuantum(true)}
-            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
+            className="hidden md:block absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
                      hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-3 py-1 rounded-md
                      border border-gray-700 hover:border-gray-500"
           >
@@ -264,7 +288,7 @@ export const Pricing: React.FC = () => {
         ) : (
           <button
             onClick={() => setShowQuantum(false)}
-            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
+            className="hidden md:block absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
                      hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] px-3 py-1 rounded-md
                      border border-gray-700 hover:border-gray-500 flex items-center gap-2"
           >
