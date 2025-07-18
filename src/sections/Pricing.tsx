@@ -276,7 +276,7 @@ export const Pricing: React.FC = () => {
         </div>
 
         {/* Desktop toggle buttons - positioned absolutely on desktop only */}
-        {!showQuantum && (
+        {!showQuantum ? (
           <button
             onClick={() => setShowQuantum(true)}
             className="hidden md:block absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 text-sm font-medium 
