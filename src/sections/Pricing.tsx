@@ -372,7 +372,7 @@ export const Pricing: React.FC = () => {
                       glow={true}
                       disabled={false}
                       proximity={64}
-                      inactiveZone={0.01}
+                      inactiveZone={0.5}
                       borderWidth={2}
                     />
                     <div className="relative h-full flex flex-col bg-gray-900/60 backdrop-blur-sm rounded-[10px] p-6">
