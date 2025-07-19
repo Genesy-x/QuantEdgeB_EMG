@@ -4,8 +4,11 @@ import { Button } from '../components/ui/neon-button';
 import { ArrowRight, Check, Phone, MessageCircle, Shield, Users, Target, DollarSign } from 'lucide-react';
 import { GradientText } from '../components/ui/gradient-text';
 import { GlowingEffect } from '../components/ui/glowing-effect';
+import { useMediaQuery } from '../hooks/use-media-query';
 
 function QuantumPage() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   const handleBookCall = () => {
     window.open('https://cal.com/quantedgeb/quantumdiscovery', '_blank');
   };
@@ -170,7 +173,7 @@ function QuantumPage() {
                 <GlowingEffect
                   spread={40}
                   glow={true}
-                  disabled={false}
+                  disabled={isMobile}
                   proximity={64}
                   inactiveZone={0.01}
                   borderWidth={2}
@@ -246,7 +249,7 @@ function QuantumPage() {
             <GlowingEffect
               spread={40}
               glow={true}
-              disabled={false}
+              disabled={isMobile}
               proximity={64}
               inactiveZone={0.01}
               borderWidth={2}
@@ -282,7 +285,7 @@ function QuantumPage() {
             <GlowingEffect
               spread={40}
               glow={true}
-              disabled={false}
+              disabled={isMobile}
               proximity={64}
               inactiveZone={0.01}
               borderWidth={2}

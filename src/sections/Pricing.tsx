@@ -10,6 +10,7 @@ import { GlowingEffect } from '../components/ui/glowing-effect';
 import { CounterDisplay } from '../components/ui/counter';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useMediaQuery } from '../hooks/use-media-query';
 
 export const Pricing: React.FC = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -25,6 +26,7 @@ export const Pricing: React.FC = () => {
     objective: ''
   });
   const [quantumFormResult, setQuantumFormResult] = useState('');
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const formatPrice = (price: string) => {
     return new Intl.NumberFormat('es-ES', {
@@ -370,7 +372,7 @@ export const Pricing: React.FC = () => {
                     <GlowingEffect
                       spread={40}
                       glow={true}
-                      disabled={false}
+                      disabled={isMobile}
                       proximity={64}
                       inactiveZone={0.5}
                       borderWidth={2}
@@ -492,7 +494,7 @@ export const Pricing: React.FC = () => {
                <GlowingEffect
                  spread={30}
                  glow={true}
-                 disabled={false}
+                 disabled={isMobile}
                  proximity={48}
                  inactiveZone={0.02}
                  borderWidth={1}
