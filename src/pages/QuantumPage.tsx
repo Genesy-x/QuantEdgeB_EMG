@@ -57,12 +57,12 @@ function QuantumPage() {
   const requirements = [
     {
       title: "One-Time Setup Fee:",
-      value: "1,000€",
+      value: "2,000€",
       icon: <DollarSign className="h-5 w-5" />
     },
     {
       title: "Minimum Capital to Deploy:",
-      value: "50,000€",
+      value: "100,000€",
       icon: <Target className="h-5 w-5" />
     },
     {
