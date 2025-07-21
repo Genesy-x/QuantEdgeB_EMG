@@ -546,7 +546,7 @@ export const Pricing: React.FC = () => {
           <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
           One-Time Setup Fee:
         </p>
-        <p className="text-2xl font-bold text-white">2,000€</p>
+        <p className="text-2xl font-bold text-white">4,000€</p>
       </div>
       <div className="bg-white/5 p-4 rounded-lg border border-white/10 transform-gpu">
         <p className="text-white font-semibold flex items-center">
