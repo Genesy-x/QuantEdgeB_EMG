@@ -24,7 +24,8 @@ function AlphaPlanPage() {
       image: "https://res.cloudinary.com/dq4flimtm/image/upload/v1751475158/Alpha_Premium_wd8eik.webp",
       features: [
         "TradingSuite",
-        "MultiEdgeSuite",
+        "Advanced Relative Strength Systems",
+        "Asset Rotation Strategies",
         "Tactical Strategies",
         "Rotation Logic",
         "Priority Support"

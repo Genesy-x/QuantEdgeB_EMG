@@ -145,13 +145,6 @@ export const Pricing: React.FC = () => {
     }, 4000);
   };
 
-  // Get the appropriate href for Premium+ based on selected variant
-  const getPremiumPlusHref = () => {
-    return selectedVariant === 'trading' 
-      ? 'https://whop.com/quantedgeb-tradingsuite/?a=quantedge17'
-      : 'https://whop.com/quantedgeb-multiedgesuite/?a=quantedge17';
-  };
-
   const plans = [
     {
       name: "FUNDAMENTAL",
@@ -195,32 +188,18 @@ export const Pricing: React.FC = () => {
     },
     {
       name: "PREMIUM +",
-      price: "49",
+      price: "49", 
       yearlyPrice: "39",
       period: "per month",
-      variants: {
-        trading: {
-          name: "TradingSuite",
-          features: [
-            "Everything in Premium",
-            "Advanced Trading Systems",
-            "Asset Based Strategies",
-            "Priority Support"
-          ]
-        },
-        multi: {
-          name: "MajorRotation Suite",
-          features: [
-            "Everything in Premium",
-            "Advanced Relative Strength Systems",
-            "Asset Rotation Strategies",            
-            "Priority Support"
-          ]
-        }
-      },
+      features: [
+        "Everything in Premium",
+        "Advanced Trading Systems",
+        "Asset Based Strategies",
+        "Priority Support"
+      ],
       description: "For Active Traders demanding precision | Tactical engines for timing, rotation, and execution",
       buttonText: "Start Free Trial",
-      href: getPremiumPlusHref(), // Dynamic href based on selected variant
+      href: "https://whop.com/quantedgeb-tradingsuite/?a=quantedge17",
       learnMoreHref: "/plans/premium",
       isPopular: false,
       glowColor: 'green' as const
@@ -232,8 +211,9 @@ export const Pricing: React.FC = () => {
       period: "per month",
       features: [
         "Everything in Premium+",
-        "TradingSuite package",
-        "MultiEdgeSuite package ",
+        "TradingSuite Package",
+        "Advanced Relative Strength Systems",
+        "Asset Rotation Strategies",
         "Personalised System Requests",
         "System Deep Dive Lessons",
         "1-on-1 Mentorship"
@@ -412,49 +392,14 @@ export const Pricing: React.FC = () => {
                           {isMonthly ? "billed monthly" : "billed annually"}
                         </p>
 
-                        {plan.name === "PREMIUM +" ? (
-                          <div className="mt-8 mb-6 flex-grow">
-                            <div className="flex gap-2 mb-4">
-                              <button
-                                onClick={() => setSelectedVariant('trading')}
-                                className={`flex-1 px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                                  selectedVariant === 'trading'
-                                    ? 'bg-gradient-to-r from-blue-500 to-blue-700 text-white'
-                                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-                                }`}
-                              > 
-                                TradingSuite
-                              </button>
-                              <button
-                                onClick={() => setSelectedVariant('multi')}
-                                className={`flex-1 px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                                  selectedVariant === 'multi'
-                                    ? 'bg-gradient-to-r from-blue-500 to-blue-700 text-white'
-                                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-                                }`}
-                              >
-                                MultiEdgeSuite
-                              </button>
-                            </div>
-                            <ul className="space-y-3">
-                              {plan.variants[selectedVariant].features.map((feature, idx) => (
-                                <li key={idx} className="flex items-start gap-2">
-                                  <Check className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
-                                  <span className="text-left text-gray-300">{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ) : (
-                          <ul className="mt-8 space-y-3 mb-6 flex-grow">
-                            {plan.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-start gap-2">
-                                <Check className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
-                                <span className="text-left text-gray-300">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                        <ul className="mt-8 space-y-3 mb-6 flex-grow">
+                          {plan.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <Check className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
+                              <span className="text-left text-gray-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
 
                         {/* Learn More button positioned above the line */}
                         <Link to={plan.learnMoreHref}>
@@ -473,7 +418,7 @@ export const Pricing: React.FC = () => {
                           variant="default"
                           size="default"
                           className="w-full text-white rounded-md"
-                          onClick={() => window.open(plan.name === "PREMIUM +" ? getPremiumPlusHref() : plan.href, '_blank')} 
+                          onClick={() => window.open(plan.href, '_blank')} 
                         >
                           {plan.buttonText}
                         </Button>
