@@ -10,7 +10,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
@@ -18,7 +18,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
@@ -26,7 +26,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
@@ -34,7 +34,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
@@ -42,7 +42,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
@@ -50,7 +50,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-12">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
@@ -58,7 +58,7 @@ export const AnnouncementBar: React.FC = () => {
           </span>
           <span className="text-gray-400 text-sm px-4">•</span>
           <span className="text-gray-300 text-sm font-medium px-8">
-            ⚡ Prices increase in 1 week! Get your plans locked-in for life today
+            ⚡ Prices increase tomorrow! Get your plans locked-in for life today
           </span>
         </div>
       </div>
