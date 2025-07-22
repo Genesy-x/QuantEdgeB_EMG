@@ -188,8 +188,8 @@ export const Pricing: React.FC = () => {
     },
     {
       name: "TRADINGSUITE",
-      price: "49", 
-      yearlyPrice: "39",
+      price: "59", 
+      yearlyPrice: "47",
       period: "per month",
       features: [
         "Everything in Premium",
