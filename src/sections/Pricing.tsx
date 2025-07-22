@@ -148,8 +148,8 @@ export const Pricing: React.FC = () => {
   const plans = [
     {
       name: "FUNDAMENTAL",
-      price: "29",
-      yearlyPrice: "23",
+      price: "39",
+      yearlyPrice: "31",
       period: "per month",
       features: [
         "Access To Discord Server",
@@ -169,8 +169,8 @@ export const Pricing: React.FC = () => {
     },
     {
       name: "PREMIUM",
-      price: "39",
-      yearlyPrice: "31",
+      price: "49",
+      yearlyPrice: "39",
       period: "per month",
       features: [
         "Everything in Fundamental",
@@ -187,7 +187,7 @@ export const Pricing: React.FC = () => {
       glowColor: 'purple' as const
     },
     {
-      name: "PREMIUM +",
+      name: "TRADINGSUITE",
       price: "49", 
       yearlyPrice: "39",
       period: "per month",
@@ -206,8 +206,8 @@ export const Pricing: React.FC = () => {
     },
     {
       name: "ALPHA",
-      price: "69",
-      yearlyPrice: "55",
+      price: "150",
+      yearlyPrice: "120",
       period: "per month",
       features: [
         "Everything in Premium+",
