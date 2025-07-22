@@ -377,7 +377,7 @@ export const Pricing: React.FC = () => {
                             <CounterDisplay
                               value={Number(isMonthly ? plan.price : plan.yearlyPrice)}
                               fontSize={48}
-                              places={Number(isMonthly ? plan.price : plan.yearlyPrice) >= 10 ? [10, 1] : [1]}
+                              places={Array.from(String(Number(isMonthly ? plan.price : plan.yearlyPrice))).map((_, i, arr) => Math.pow(10, arr.length - 1 - i))}
                               gap={1}
                               textColor="white"
                               fontWeight="bold"
