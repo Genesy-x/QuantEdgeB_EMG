@@ -195,6 +195,7 @@ export const Pricing: React.FC = () => {
         "Everything in Premium",
         "Advanced Trading Systems",
         "Asset Based Strategies",
+        "System Deep Dive Lessons",
         "Priority Support"
       ],
       description: "For Active Traders demanding precision | Tactical engines for timing, rotation, and execution",
@@ -215,7 +216,6 @@ export const Pricing: React.FC = () => {
         "Advanced Relative Strength Systems",
         "Asset Rotation Strategies",
         "Personalised System Requests",
-        "System Deep Dive Lessons",
         "1-on-1 Mentorship"
       ],
       description: "For Elites Only | Every tool, every system, every edge. Backed by mentorship, built for mastery",
