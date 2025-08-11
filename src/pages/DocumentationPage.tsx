@@ -255,20 +255,20 @@ You already know <i>where</i> the good stuff
                   <p className="text-gray-300 mb-6">
                     We've sent <strong>{selectedResource.title}</strong> to your email address. Check your inbox <i>(and spam folder)</i> for the download link.
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex flex-col items-center">
                     <Button
                       variant="default"
                       size="lg"
-                      className="w-full text-white"
+                      className="w-full text-white flex items-center justify-center"
                       onClick={() => window.open(selectedResource.downloadUrl, '_blank')}
                     >
-                      <Download className="h-4 w-4 mr-2" />
+                      <Download className="h-4 w-4 mr-2 flex-shrink-0" />
                       Access Resource Now
                     </Button>
                     <Button
                       variant="outline"
                       size="lg"
-                      className="w-full"
+                      className="w-full flex items-center justify-center"
                       onClick={handleCloseModal}
                     >
                       Close
