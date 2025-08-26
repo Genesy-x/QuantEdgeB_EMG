@@ -62,7 +62,8 @@ Get <strong>direct sessions</strong> with the creator — to tweak, refine, adap
         "Real-time support and idea shaping",
         <>
         Bespoke planning for&nbsp;<em>your</em>&nbsp;assets, timeframe & vision
-          </>
+          </>,
+        "Weekly Live Analysis"
       ]
     }
   ];
