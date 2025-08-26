@@ -177,7 +177,7 @@ export const Pricing: React.FC = () => {
         "Universal Trend Following Models",
         "Universal Valuation Models",
         "Advanced Signals",
-        "Monthly Live",
+        "Monthly Live Analysis",
         "Exclusive Access To QuantEdgeB Portfolio"
       ],
       description: "For those ready to trade with confidence | Full-cycle systems for smarter entries, exits, and rotations",
