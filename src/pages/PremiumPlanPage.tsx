@@ -178,7 +178,8 @@ See when to enter, exit, rotate, and why — across any asset, any timeframe.
 <br/><br/>
 
               The Premium Tier gives you a modular strategy framework that bridges macro clarity and market timing.<br/>
-Get the tools to track cycles, time entries, rotate assets, and build dynamic positioning.
+Get the tools to track cycles, time entries, rotate assets, and build dynamic positioning. <br/>
+              Finally, get access to our monthly live analysis, your monthly compass to navigate the crypto world.
               <br/><br/>
             <strong> All with logic, nothing with guesswork. </strong>
             </p>
