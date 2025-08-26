@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, X, Menu, Twitter, Globe, Bitcoin } from 'lucide-react';
-import { AnnouncementBar } from './ui/announcement-bar';
+// import { AnnouncementBar } from './ui/announcement-bar';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
       <nav 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
