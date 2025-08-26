@@ -44,7 +44,8 @@ Learn the <em> "why" </em> behind every signal—not just how to use it, but how
         "Design philosophy & structure",
         "Cross-signal relationships",
         "Success/failure case studies",
-        "Tactical examples in real trades"
+        "Tactical examples in real trades",
+        "Weekly Live Analysis"
       ]
     },
     {
@@ -62,8 +63,7 @@ Get <strong>direct sessions</strong> with the creator — to tweak, refine, adap
         "Real-time support and idea shaping",
         <>
         Bespoke planning for&nbsp;<em>your</em>&nbsp;assets, timeframe & vision
-          </>,
-        "Weekly Live Analysis"
+          </>
       ]
     }
   ];
