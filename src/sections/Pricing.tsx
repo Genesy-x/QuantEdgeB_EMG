@@ -217,7 +217,7 @@ export const Pricing: React.FC = () => {
         "Advanced Relative Strength Systems",
         "Asset Rotation Strategies",
         "Personalised System Requests",
-        "Weekly Live Calls",
+        "Weekly Live Analysis",
         "1-on-1 Mentorship"
       ],
       description: "For Elites Only | Every tool, every system, every edge. Backed by mentorship, built for mastery",
