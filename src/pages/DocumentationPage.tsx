@@ -39,7 +39,7 @@ Try out these <b>free indicators</b> and get a taste of the QuantEdgeB expertise
     },
     {
       id: 'risk-management-calculator',
-      title: ' Private Discord Server',
+      title: '👾 Private Discord Server',
       description: <>
       <b>Unsure of what you can expect? Say no more.</b><br/><br/>
 Access our <em>private Discord Server</em> for <b>FREE</b> and meet the QuantEdgeB community.<br/>
