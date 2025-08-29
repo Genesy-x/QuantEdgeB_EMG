@@ -39,15 +39,15 @@ Try out these <b>free indicators</b> and get a taste of the QuantEdgeB expertise
     },
     {
       id: 'risk-management-calculator',
-      title: '🚧 Coming Soon...',
+      title: ' Private Discord Server',
       description: <>
-      More free resources are on the way — but let’s be real:<br/>
-<b>The real edge lives inside the full system.</b><br/>
-You already know <i>where</i> the good stuff is.
+      <b>Unsure of what you can expect? Say no more.</b><br/><br/>
+Access our <em>private Discord Server</em> for <b>FREE</b> and meet the QuantEdgeB community.<br/>
+Daily analyses, direct access to the team, info sharing... all await you there!
         </>,
-      image: 'https://res.cloudinary.com/dq4flimtm/image/upload/v1750859159/QuantEdgeB_Crypto_Trading_AboutQuantEdgeB_4.png',
-      downloadUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      category: '???'
+      image: 'https://res.cloudinary.com/dx3mzzjgk/image/upload/v1756487019/QEB_Discord_Server_jyaw8j.avif',
+      downloadUrl: 'https://whop.com/quant-edge-bdiscord',
+      category: 'tool'
     },
     {
       id: 'psychology-checklist',
