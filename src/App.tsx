@@ -25,30 +25,30 @@ declare global {
 }
 
 function App() {
-  // React.useEffect(() => {
-  //   // Initialize AI Chatbot
-  //   window.VG_CONFIG = {
-  //     ID: "BXtm6InemByRV438C9r0",
-  //     region: 'na',
-  //     render: 'bottom-right',
-  //     stylesheets: [
-  //       "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
-  //     ],
-  //   };
+   React.useEffect(() => {
+     // Initialize AI Chatbot
+     window.VG_CONFIG = {
+       ID: "BXtm6InemByRV438C9r0",
+       region: 'na',
+       render: 'bottom-right',
+       stylesheets: [
+         "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+       ],
+     };
 
-  //   const VG_SCRIPT = document.createElement("script");
-  //   VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
-  //   VG_SCRIPT.defer = true;
-  //   document.body.appendChild(VG_SCRIPT);
+     const VG_SCRIPT = document.createElement("script");
+     VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+     VG_SCRIPT.defer = true;
+     document.body.appendChild(VG_SCRIPT);
 
-  //   // Cleanup function
-  //   return () => {
-  //     const existingScript = document.querySelector('script[src="https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js"]');
-  //     if (existingScript) {
-  //       document.body.removeChild(existingScript);
-  //     }
-  //   };
-  // }, []);
+     // Cleanup function
+     return () => {
+       const existingScript = document.querySelector('script[src="https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js"]');
+       if (existingScript) {
+         document.body.removeChild(existingScript);
+       }
+     };
+   }, []);
 
   return (
     <Router>
@@ -56,9 +56,9 @@ function App() {
         <InteractiveNeuralVortex />
         <div className="relative z-10">
           {/* AI Chatbot Container - TEMPORARILY HIDDEN */}
-          {/* <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER"> */}
+          <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
             {/* Here is where CONVOCORE renders the widget. */}
-          {/* </div> */}
+          * </div>
           
           <ScrollToTop />
           <Navbar />
