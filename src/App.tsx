@@ -77,6 +77,8 @@ function App() {
               <Route path="/auth/register" element={<RegisterForm />} />
               <Route path="/auth/verify-email" element={<VerifyEmailPage />} />
               <Route path="/auth/whop-callback" element={<WhopCallbackPage />} />
+              <Route path="/auth/whop-success" element={<WhopSuccessPage />} />
+              <Route path="/auth/whop-error" element={<WhopErrorPage />} />
               
               {/* Protected Dashboard Routes */}
               <Route path="/dashboard" element={
