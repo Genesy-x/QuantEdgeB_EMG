@@ -3,49 +3,28 @@ import { Link } from 'react-router-dom';
 import { Shield, CheckCircle, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/neon-button';
 import { useAuth } from '../../hooks/useAuth';
+import { getToken } from '../../lib/auth';
 
 export const WhopConnect: React.FC = () => {
-  const { user, updateProfile } = useAuth();
+  const { user } = useAuth();
   const [isConnecting, setIsConnecting] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Whop configuration
-  const WHOP_APP_ID = import.meta.env.VITE_WHOP_APP_ID;
-  const WHOP_COMPANY_ID = import.meta.env.VITE_WHOP_COMPANY_ID;
-
   const handleWhopConnect = () => {
-    if (!WHOP_APP_ID || !WHOP_COMPANY_ID) {
-      setMessage('Whop integration not configured');
+    const token = getToken();
+    
+    if (!token) {
+      setMessage('Please log in first to connect your Whop account');
       return;
     }
 
     setIsConnecting(true);
     
-    // Whop OAuth URL
-    const whopConnectUrl = `https://whop.com/oauth/authorize?` + new URLSearchParams({
-      client_id: WHOP_APP_ID,
-      redirect_uri: `${window.location.origin}/auth/whop-callback`,
-      response_type: 'code',
-      scope: 'user:read memberships:read',
-      state: user?.id || 'unknown'
-    });
-
-    // Open in popup or redirect
-    const popup = window.open(
-      whopConnectUrl, 
-      'whop-connect', 
-      'width=600,height=700,scrollbars=yes,resizable=yes'
-    );
-
-    // Listen for popup completion
-    const checkClosed = setInterval(() => {
-      if (popup?.closed) {
-        clearInterval(checkClosed);
-        setIsConnecting(false);
-        // Check if user was updated (you'd implement this)
-        window.location.reload(); // Simple approach
-      }
-    }, 1000);
+    // Use the official Whop OAuth flow via our Netlify function
+    const whopOAuthUrl = `/.netlify/functions/auth-whop-init?token=${encodeURIComponent(token)}&next=${encodeURIComponent('/dashboard')}`;
+    
+    // Redirect to start OAuth flow
+    window.location.href = whopOAuthUrl;
   };
 
   const handleManualVerify = () => {
@@ -85,7 +64,7 @@ export const WhopConnect: React.FC = () => {
       )}
 
       <div className="space-y-4">
-        {/* Primary: Whop Connect */}
+        {/* Primary: Official Whop Connect */}
         <Button
           onClick={handleWhopConnect}
           disabled={isConnecting}
@@ -93,7 +72,7 @@ export const WhopConnect: React.FC = () => {
         >
           <div className="flex items-center justify-center">
             <ExternalLink className="h-5 w-5 mr-2" />
-            {isConnecting ? 'Connecting...' : 'Connect with Whop'}
+            {isConnecting ? 'Redirecting to Whop...' : 'Connect with Whop'}
           </div>
         </Button>
 
