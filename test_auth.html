@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantEdgeB Authentication Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #111;
+            color: white;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #1a1a1a;
+        }
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        input {
+            width: 300px;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 4px;
+            border: 1px solid #555;
+            background-color: #2a2a2a;
+            color: white;
+        }
+        .result {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+        .success {
+            border-left: 4px solid #10b981;
+        }
+        .error {
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 QuantEdgeB Authentication System Test</h1>
+    
+    <div class="test-section">
+        <h2>📝 User Registration</h2>
+        <input type="text" id="regName" placeholder="Full Name" value="Test User">
+        <input type="email" id="regEmail" placeholder="Email" value="test@example.com">
+        <input type="password" id="regPassword" placeholder="Password" value="test123">
+        <br>
+        <button onclick="testRegister()">Test Registration</button>
+        <div id="regResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔑 User Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email" value="test@example.com">
+        <input type="password" id="loginPassword" placeholder="Password" value="test123">
+        <br>
+        <button onclick="testLogin()">Test Login</button>
+        <div id="loginResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>👤 Get Profile</h2>
+        <button onclick="testProfile()">Test Get Profile</button>
+        <div id="profileResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>⭐ Whop Verification</h2>
+        <input type="email" id="whopEmail" placeholder="Whop Email" value="test@example.com">
+        <br>
+        <button onclick="testWhopVerification()">Test Whop Verification</button>
+        <div id="whopResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🚪 Logout</h2>
+        <button onclick="testLogout()">Test Logout</button>
+        <div id="logoutResult" class="result"></div>
+    </div>
+
+    <script>
+        let currentToken = null;
+
+        async function apiCall(endpoint, method = 'POST', data = null) {
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+            
+            if (currentToken) {
+                headers['Authorization'] = `Bearer ${currentToken}`;
+            }
+
+            const config = {
+                method,
+                headers
+            };
+
+            if (data) {
+                config.body = JSON.stringify(data);
+            }
+
+            try {
+                const response = await fetch(`/.netlify/functions/${endpoint}`, config);
+                const result = await response.json();
+                return { success: response.ok, data: result, status: response.status };
+            } catch (error) {
+                return { success: false, error: error.message };
+            }
+        }
+
+        async function testRegister() {
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            const result = await apiCall('auth-register', 'POST', { name, email, password });
+            
+            const resultDiv = document.getElementById('regResult');
+            resultDiv.className = 'result ' + (result.success ? 'success' : 'error');
+            resultDiv.textContent = JSON.stringify(result, null, 2);
+        }
+
+        async function testLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            const result = await apiCall('auth-login', 'POST', { email, password });
+            
+            if (result.success && result.data.token) {
+                currentToken = result.data.token;
+            }
+            
+            const resultDiv = document.getElementById('loginResult');
+            resultDiv.className = 'result ' + (result.success ? 'success' : 'error');
+            resultDiv.textContent = JSON.stringify(result, null, 2);
+        }
+
+        async function testProfile() {
+            const result = await apiCall('auth-profile', 'GET');
+            
+            const resultDiv = document.getElementById('profileResult');
+            resultDiv.className = 'result ' + (result.success ? 'success' : 'error');
+            resultDiv.textContent = JSON.stringify(result, null, 2);
+        }
+
+        async function testWhopVerification() {
+            const email = document.getElementById('whopEmail').value;
+            
+            const result = await apiCall('auth-verify-whop', 'POST', { email });
+            
+            const resultDiv = document.getElementById('whopResult');
+            resultDiv.className = 'result ' + (result.success ? 'success' : 'error');
+            resultDiv.textContent = JSON.stringify(result, null, 2);
+        }
+
+        async function testLogout() {
+            const result = await apiCall('auth-logout', 'POST');
+            currentToken = null;
+            
+            const resultDiv = document.getElementById('logoutResult');
+            resultDiv.className = 'result ' + (result.success ? 'success' : 'error');
+            resultDiv.textContent = JSON.stringify(result, null, 2);
+        }
+
+        // Status indicator
+        function updateStatus() {
+            document.title = currentToken ? '🟢 QuantEdgeB Auth Test - Logged In' : '🔴 QuantEdgeB Auth Test - Not Logged In';
+        }
+
+        setInterval(updateStatus, 1000);
+    </script>
+</body>
+</html>
