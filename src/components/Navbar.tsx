@@ -155,6 +155,36 @@ export const Navbar: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(59,130,246,0.5)] blur-[1px]"></span>
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-70"></span>
               </Link>
+
+              {/* Authentication Section */}
+              {isAuthenticated ? (
+                <Link 
+                  to="/dashboard"
+                  className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                >
+                  <User className="h-4 w-4" />
+                  <span className="text-sm font-medium">
+                    {user?.name || 'Dashboard'}
+                  </span>
+                </Link>
+              ) : (
+                <div className="flex items-center space-x-4">
+                  <Link 
+                    to="/auth/login"
+                    className="text-gray-300 hover:text-white transition-colors relative group flex items-center"
+                  >
+                    <LogIn className="h-4 w-4 mr-1" />
+                    Sign In
+                  </Link>
+                  <Link 
+                    to="/auth/register"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                  >
+                    <UserPlus className="h-4 w-4 mr-1" />
+                    Sign Up
+                  </Link>
+                </div>
+              )}
             </div>
             
             {/* Mobile menu button */}
