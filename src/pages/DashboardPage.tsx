@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Settings, Shield, Star, Mail, LogOut, User } from 'lucide-react';
 import { Button } from '../components/ui/neon-button';
+import { WhopConnect } from '../components/auth/WhopConnect';
 import { Link } from 'react-router-dom';
 
 export const DashboardPage: React.FC = () => {
