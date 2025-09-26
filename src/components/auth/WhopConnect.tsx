@@ -54,7 +54,7 @@ export const WhopConnect: React.FC = () => {
       </h3>
       
       <p className="text-blue-200 mb-6 text-sm">
-        Connect your Whop account to automatically verify your premium subscription and unlock all QuantEdgeB features.
+        Connect your Whop account to automatically verify your Alpha subscription and unlock all QuantEdgeB features.
       </p>
 
       {message && (
