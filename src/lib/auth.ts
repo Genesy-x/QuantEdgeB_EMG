@@ -139,7 +139,7 @@ export const removeToken = (): void => {
 
 // Google OAuth configuration
 export const googleOAuthConfig = {
-  clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID || '',
+  clientId: import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID || '',
   redirectUri: `${window.location.origin}/auth/callback/google`,
   scope: 'openid email profile'
 };
