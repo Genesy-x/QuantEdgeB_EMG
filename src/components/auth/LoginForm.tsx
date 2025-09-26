@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, LogIn, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/neon-button';
 import { useAuth } from '../../hooks/useAuth';
-import { initiateGoogleOAuth } from '../../lib/auth';
+import { initiateGoogleOAuth, getToken } from '../../lib/auth';
 
 export const LoginForm: React.FC = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   
   const [formData, setFormData] = useState({
     email: '',
@@ -16,11 +16,13 @@ export const LoginForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [whopMessage, setWhopMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     if (error) setError('');
+    if (whopMessage) setWhopMessage('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,6 +44,18 @@ export const LoginForm: React.FC = () => {
     }
   };
 
+  const handleWhopConnect = () => {
+    const token = getToken();
+    
+    if (!token && !isAuthenticated) {
+      setWhopMessage('Please sign in first to connect your Whop account');
+      return;
+    }
+
+    // Redirect to Whop OAuth flow
+    const whopOAuthUrl = `/.netlify/functions/auth-whop-init?token=${encodeURIComponent(token || '')}&next=${encodeURIComponent('/dashboard')}`;
+    window.location.href = whopOAuthUrl;
+  };
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-black">
       <div className="max-w-md w-full space-y-8">
@@ -64,6 +78,11 @@ export const LoginForm: React.FC = () => {
             </div>
           )}
 
+          {whopMessage && (
+            <div className="mb-6 p-4 bg-yellow-900/20 border border-yellow-700 rounded-lg">
+              <p className="text-yellow-400 text-sm">{whopMessage}</p>
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -158,6 +177,18 @@ export const LoginForm: React.FC = () => {
             </button>
           </div>
 
+              <button
+                type="button"
+                onClick={handleWhopConnect}
+                disabled={isLoading}
+                className="w-full flex items-center justify-center px-4 py-3 border border-gray-700 rounded-lg 
+                         bg-gray-800/50 hover:bg-gray-700/50 transition-colors text-white
+                         disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Connect with Whop
+              </button>
+            </div>
           <p className="mt-6 text-center text-sm text-gray-400">
             Don't have an account?{' '}
             <Link to="/auth/register" className="text-blue-400 hover:text-blue-300 transition-colors font-medium">
