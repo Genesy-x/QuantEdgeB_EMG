@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🔧 Function Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #111; color: white; }
+        button { background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 6px; margin: 10px; cursor: pointer; }
+        .result { background: #2a2a2a; padding: 10px; margin: 10px 0; border-radius: 4px; white-space: pre-wrap; }
+        input { background: #2a2a2a; color: white; border: 1px solid #555; padding: 8px; margin: 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Netlify Functions Test</h1>
+    <p><strong>Use this after deploying to Netlify!</strong></p>
+    
+    <div>
+        <h3>Test Registration:</h3>
+        <input type="email" id="email" placeholder="test@example.com" value="test@example.com">
+        <input type="password" id="password" placeholder="password" value="test123">
+        <input type="text" id="name" placeholder="Test User" value="Test User">
+        <br>
+        <button onclick="testRegister()">Test Register</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        async function testRegister() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value;
+            
+            try {
+                const response = await fetch('/.netlify/functions/auth-register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password, name })
+                });
+                
+                const result = await response.json();
+                document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+                
+                if (response.ok) {
+                    document.getElementById('result').style.borderLeft = '4px solid #10b981';
+                } else {
+                    document.getElementById('result').style.borderLeft = '4px solid #ef4444';
+                }
+            } catch (error) {
+                document.getElementById('result').textContent = 'Error: ' + error.message;
+                document.getElementById('result').style.borderLeft = '4px solid #ef4444';
+            }
+        }
+    </script>
+</body>
+</html>
