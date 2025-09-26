@@ -1,8 +1,8 @@
-import { createTransporter as createResendTransporter } from 'nodemailer';
+import nodemailer from 'nodemailer';
 
 export const createTransporter = () => {
   // Use Resend for email sending (already installed)
-  return createResendTransporter({
+  return nodemailer.createTransporter({
     host: 'smtp.resend.com',
     port: 587,
     secure: false,
