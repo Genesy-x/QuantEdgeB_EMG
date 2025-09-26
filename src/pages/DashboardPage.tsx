@@ -22,7 +22,7 @@ export const DashboardPage: React.FC = () => {
       return (
         <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500 to-blue-700 text-white">
           <Star className="h-4 w-4 mr-1" />
-          Premium Member
+          Alpha Member
         </span>
       );
     }
