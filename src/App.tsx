@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './hooks/useAuth';
 import { BackToTop } from './components/BackToTop';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Footer } from './sections/Footer';
+import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import AboutPage from './pages/AboutPage';
@@ -15,6 +17,11 @@ import PremiumPlanPage from './pages/PremiumPlanPage';
 import AlphaPlanPage from './pages/AlphaPlanPage';
 import DocumentationPage from './pages/DocumentationPage';
 import QuantumPage from './pages/QuantumPage';
+import { LoginForm } from './components/auth/LoginForm';
+import { RegisterForm } from './components/auth/RegisterForm';
+import { DashboardPage } from './pages/DashboardPage';
+import { VerifyEmailPage } from './pages/VerifyEmailPage';
+import { WhopVerificationPage } from './pages/WhopVerificationPage';
 import InteractiveNeuralVortex from './components/ui/interactive-neural-vortex-background';
 
 // AI Chatbot Integration
