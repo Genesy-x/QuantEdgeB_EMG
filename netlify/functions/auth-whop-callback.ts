@@ -1,107 +1,100 @@
 import { Handler } from '@netlify/functions';
 import jwt from 'jsonwebtoken';
+import { WhopServerSdk } from '@whop/api';
 import { setWhopVerified } from './utils/database';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-jwt-secret-key';
+
+// Initialize Whop SDK
+const whopApi = WhopServerSdk({
+  appApiKey: process.env.WHOP_API_KEY!,
+  appId: process.env.NEXT_PUBLIC_WHOP_APP_ID,
+});
 
 export const handler: Handler = async (event) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   };
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
   }
 
-  if (event.httpMethod !== 'POST') {
+  if (event.httpMethod !== 'GET') {
     return {
       statusCode: 405,
       headers,
-      body: JSON.stringify({ success: false, message: 'Method Not Allowed' }),
+      body: JSON.stringify({ success: false, message: 'Method Not Allowed - use GET' }),
     };
   }
 
   try {
-    const authHeader = event.headers.authorization;
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return {
-        statusCode: 401,
-        headers,
-        body: JSON.stringify({ success: false, message: 'No token provided' }),
-      };
-    }
-
-    const token = authHeader.substring(7);
-    const decoded = jwt.verify(token, JWT_SECRET) as { userId: string; email: string };
-    
-    const { code, state } = JSON.parse(event.body || '{}');
+    // Get code and state from query parameters (this is a GET request from Whop redirect)
+    const url = new URL(event.rawUrl || `https://example.com${event.path}?${event.rawQuery || ''}`);
+    const code = url.searchParams.get('code');
+    const state = url.searchParams.get('state');
 
     if (!code) {
       return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ success: false, message: 'Authorization code is required' }),
+        statusCode: 302,
+        headers: {
+          ...headers,
+          'Location': '/auth/whop-error?error=missing_code'
+        },
+        body: ''
       };
     }
 
-    // Exchange authorization code for access token
-    const tokenResponse = await fetch('https://api.whop.com/api/v2/oauth/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        client_id: process.env.NEXT_PUBLIC_WHOP_APP_ID,
-        client_secret: process.env.WHOP_CLIENT_SECRET, // You'll need this
-        code: code,
-        grant_type: 'authorization_code',
-        redirect_uri: `${process.env.URL}/auth/whop-callback`
-      })
+    if (!state) {
+      return {
+        statusCode: 302,
+        headers: {
+          ...headers,
+          'Location': '/auth/whop-error?error=missing_state'
+        },
+        body: ''
+      };
+    }
+
+    // Exchange the code for a token using official Whop SDK
+    const authResponse = await whopApi.oauth.exchangeCode({
+      code,
+      redirectUri: `${process.env.URL}/auth/whop-callback`,
     });
 
-    if (!tokenResponse.ok) {
-      const errorData = await tokenResponse.text();
-      console.error('Whop token exchange failed:', errorData);
+    if (!authResponse.ok) {
+      console.error('Whop OAuth exchange failed:', authResponse.error);
       return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ 
-          success: false, 
-          message: 'Failed to exchange authorization code'
-        }),
+        statusCode: 302,
+        headers: {
+          ...headers,
+          'Location': '/auth/whop-error?error=code_exchange_failed'
+        },
+        body: ''
       };
     }
 
-    const tokenData = await tokenResponse.json();
-    const accessToken = tokenData.access_token;
+    const { access_token } = authResponse.tokens;
 
     // Get user's memberships using the access token
-    const membershipsResponse = await fetch('https://api.whop.com/api/v2/me/memberships', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${accessToken}`,
-        'Content-Type': 'application/json'
-      }
-    });
+    const userMemberships = await whopApi.oauth.getUserMemberships(access_token);
 
-    if (!membershipsResponse.ok) {
+    if (!userMemberships.ok) {
+      console.error('Failed to get user memberships:', userMemberships.error);
       return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ 
-          success: false, 
-          message: 'Failed to fetch membership information'
-        }),
+        statusCode: 302,
+        headers: {
+          ...headers,
+          'Location': '/auth/whop-error?error=membership_fetch_failed'
+        },
+        body: ''
       };
     }
 
-    const membershipsData = await membershipsResponse.json();
-    const memberships = membershipsData.data || [];
-
     // Check if user has any valid memberships for your company
-    const validMembership = memberships.find((membership: any) => {
+    const validMembership = userMemberships.memberships.find((membership: any) => {
       return membership.valid === true && 
              membership.status === 'completed' &&
              membership.product?.company_id === process.env.NEXT_PUBLIC_WHOP_COMPANY_ID;
@@ -109,49 +102,38 @@ export const handler: Handler = async (event) => {
 
     if (!validMembership) {
       return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ 
-          success: false, 
-          message: 'No active QuantEdgeB subscription found on your Whop account'
-        }),
+        statusCode: 302,
+        headers: {
+          ...headers,
+          'Location': '/auth/whop-error?error=no_valid_subscription'
+        },
+        body: ''
       };
     }
 
-    // Update user's Whop verification status
-    const updatedUser = await setWhopVerified(decoded.userId, true);
+    // Get user info
+    const userInfo = await whopApi.oauth.getUserInfo(access_token);
     
-    if (!updatedUser) {
-      return {
-        statusCode: 404,
-        headers,
-        body: JSON.stringify({ success: false, message: 'User not found' }),
-      };
-    }
-
+    // The state parameter should contain our user ID (we need to modify the frontend to include this)
+    // For now, we'll redirect to a success page that will handle the verification client-side
     return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({
-        success: true,
-        message: 'Whop account connected successfully! You now have premium access.',
-        user: updatedUser,
-        membership: {
-          product: validMembership.product?.title,
-          plan: validMembership.plan?.title
-        }
-      }),
+      statusCode: 302,
+      headers: {
+        ...headers,
+        'Location': `/auth/whop-success?token=${access_token}&membership=${validMembership.id}&user=${userInfo.ok ? userInfo.user.id : 'unknown'}`
+      },
+      body: ''
     };
 
   } catch (error) {
     console.error('Whop callback error:', error);
     return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({
-        success: false,
-        message: 'Connection failed. Please try again.'
-      }),
+      statusCode: 302,
+      headers: {
+        ...headers,
+        'Location': '/auth/whop-error?error=server_error'
+      },
+      body: ''
     };
   }
 };
