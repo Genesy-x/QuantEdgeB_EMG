@@ -4,12 +4,50 @@ import { getUserById, setWhopVerified } from './utils/database';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-jwt-secret-key';
 
-// Mock Whop verification - replace with actual Whop API integration
-const mockWhopEmails = [
-  'test@example.com',
-  'premium@quantedgeb.com',
-  'alpha@test.com'
-];
+// Whop API integration
+async function checkWhopSubscription(email: string): Promise<boolean> {
+  const WHOP_API_KEY = process.env.WHOP_API_KEY;
+  const WHOP_COMPANY_ID = process.env.NEXT_PUBLIC_WHOP_COMPANY_ID;
+
+  if (!WHOP_API_KEY || !WHOP_COMPANY_ID) {
+    console.error('Missing Whop API credentials');
+    return false;
+  }
+
+  try {
+    // Get all memberships for the company
+    const response = await fetch(`https://api.whop.com/api/v2/memberships`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${WHOP_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      // Add query parameters to filter by company
+      body: null
+    });
+
+    if (!response.ok) {
+      console.error('Whop API error:', response.status, response.statusText);
+      return false;
+    }
+
+    const data = await response.json();
+    
+    // Check if any membership has the provided email and is valid
+    const memberships = data.data || [];
+    const validMembership = memberships.find((membership: any) => {
+      return membership.email?.toLowerCase() === email.toLowerCase() && 
+             membership.valid === true &&
+             membership.status === 'completed';
+    });
+
+    return !!validMembership;
+
+  } catch (error) {
+    console.error('Whop API call failed:', error);
+    return false;
+  }
+}
 
 export const handler: Handler = async (event) => {
   const headers = {
@@ -53,9 +91,8 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    // Mock Whop verification - replace with actual API call to Whop
-    // Example: const isWhopSubscriber = await checkWhopSubscription(email);
-    const isWhopSubscriber = mockWhopEmails.includes(email.toLowerCase());
+    // Real Whop verification
+    const isWhopSubscriber = await checkWhopSubscription(email);
 
     if (!isWhopSubscriber) {
       return {
@@ -63,7 +100,7 @@ export const handler: Handler = async (event) => {
         headers,
         body: JSON.stringify({ 
           success: false, 
-          message: 'Email not found in Whop subscriptions. Please ensure you\'re using the correct email address.' 
+          message: 'Email not found in active Whop subscriptions. Please ensure you\'re using the correct email address and have an active subscription.' 
         }),
       };
     }
@@ -92,11 +129,11 @@ export const handler: Handler = async (event) => {
   } catch (error) {
     console.error('Whop verification error:', error);
     return {
-      statusCode: 401,
+      statusCode: 500,
       headers,
       body: JSON.stringify({
         success: false,
-        message: 'Invalid token or verification failed'
+        message: 'Verification failed. Please try again later.'
       }),
     };
   }
