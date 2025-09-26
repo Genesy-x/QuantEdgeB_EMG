@@ -18,8 +18,6 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/nodemailer": "^7.0.1",
     "@types/uuid": "^10.0.0",
-    "@whop-sdk/core": "^1.0.0",
-    "@whop-sdk/react": "^1.0.0",
     "@whop/api": "^0.0.50",
     "bcryptjs": "^3.0.2",
     "canvas-confetti": "^1.9.2",
