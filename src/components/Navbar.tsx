@@ -5,6 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 // import { AnnouncementBar } from './ui/announcement-bar';
 
 export const Navbar: React.FC = () => {
+  const { isAuthenticated, user } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [plansDropdownOpen, setPlansDropdownOpen] = useState(false);
