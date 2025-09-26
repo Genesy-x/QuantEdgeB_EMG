@@ -94,7 +94,7 @@ export const DashboardPage: React.FC = () => {
           <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">Premium Access</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">Alpha Access</h3>
                 <p className="text-gray-400">
                   {user.whopVerified ? 'Active subscription' : 'Free tier'}
                 </p>
