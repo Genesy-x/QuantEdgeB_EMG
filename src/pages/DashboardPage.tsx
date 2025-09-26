@@ -142,7 +142,7 @@ export const DashboardPage: React.FC = () => {
               <div className="flex items-center justify-between mb-4">
                 <Star className="h-8 w-8 text-yellow-500 group-hover:text-yellow-400 transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Premium Content</h3>
+              <h3 className="text-lg font-semibold text-white mb-2">Alpha Content</h3>
               <p className="text-gray-400 text-sm">
                 Access exclusive trading tools and analysis
               </p>
