@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, X, Menu, Twitter, Globe, Bitcoin } from 'lucide-react';
+import { ChevronDown, X, Menu, Twitter, Globe, Bitcoin, User, LogIn, UserPlus } from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
 // import { AnnouncementBar } from './ui/announcement-bar';
 
 export const Navbar: React.FC = () => {
