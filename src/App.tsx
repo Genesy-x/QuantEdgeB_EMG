@@ -22,6 +22,7 @@ import { RegisterForm } from './components/auth/RegisterForm';
 import { DashboardPage } from './pages/DashboardPage';
 import { VerifyEmailPage } from './pages/VerifyEmailPage';
 import { WhopVerificationPage } from './pages/WhopVerificationPage';
+import { WhopCallbackPage } from './pages/WhopCallbackPage';
 import InteractiveNeuralVortex from './components/ui/interactive-neural-vortex-background';
 
 // AI Chatbot Integration
