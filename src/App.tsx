@@ -23,6 +23,8 @@ import { DashboardPage } from './pages/DashboardPage';
 import { VerifyEmailPage } from './pages/VerifyEmailPage';
 import { WhopVerificationPage } from './pages/WhopVerificationPage';
 import { WhopCallbackPage } from './pages/WhopCallbackPage';
+import { WhopSuccessPage } from './pages/WhopSuccessPage';
+import { WhopErrorPage } from './pages/WhopErrorPage';
 import InteractiveNeuralVortex from './components/ui/interactive-neural-vortex-background';
 
 // AI Chatbot Integration
