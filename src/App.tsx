@@ -58,35 +58,73 @@ function App() {
    }, []);
 
   return (
-    <Router>
-      <div className="min-h-screen bg-black text-white font-sans relative overflow-hidden">
-        <InteractiveNeuralVortex />
-        <div className="relative z-10">
-          {/* AI Chatbot Container - TEMPORARILY HIDDEN */}
-          <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
-            {/* Here is where CONVOCORE renders the widget. */}
-          * </div>
-          
-          <ScrollToTop />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/faq" element={<FAQPage />} />
-            <Route path="/documentation" element={<DocumentationPage />} />
-            <Route path="/plans/fundamental" element={<FundamentalPlanPage />} />
-            <Route path="/plans/premium" element={<PremiumPlanPage />} />
-            <Route path="/plans/alpha" element={<AlphaPlanPage />} />
-            <Route path="/quantum" element={<QuantumPage />} />
-          </Routes>
-          <Footer />
-          <BackToTop />
+    <AuthProvider>
+      <Router>
+        <div className="min-h-screen bg-black text-white font-sans relative overflow-hidden">
+          <InteractiveNeuralVortex />
+          <div className="relative z-10">
+            {/* AI Chatbot Container - TEMPORARILY HIDDEN */}
+            <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
+              {/* Here is where CONVOCORE renders the widget. */}
+            </div>
+            
+            <Routes>
+              {/* Authentication Routes */}
+              <Route path="/auth/login" element={<LoginForm />} />
+              <Route path="/auth/register" element={<RegisterForm />} />
+              <Route path="/auth/verify-email" element={<VerifyEmailPage />} />
+              
+              {/* Protected Dashboard Routes */}
+              <Route path="/dashboard" element={
+                <ProtectedRoute>
+                  <DashboardPage />
+                </ProtectedRoute>
+              } />
+              <Route path="/dashboard/verify-whop" element={
+                <ProtectedRoute>
+                  <WhopVerificationPage />
+                </ProtectedRoute>
+              } />
+              
+              {/* Public Routes with Navigation */}
+              <Route path="/*" element={
+                <div>
+                  <ScrollToTop />
+                  <Navbar />
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                    <Route path="/faq" element={<FAQPage />} />
+                    <Route path="/documentation" element={<DocumentationPage />} />
+                    <Route path="/plans/fundamental" element={<FundamentalPlanPage />} />
+                    <Route path="/plans/premium" element={<PremiumPlanPage />} />
+                    <Route path="/plans/alpha" element={<AlphaPlanPage />} />
+                    <Route path="/quantum" element={<QuantumPage />} />
+                    
+                    {/* Premium Content - Protected */}
+                    <Route path="/premium-content" element={
+                      <ProtectedRoute requirePremium={true}>
+                        <div className="min-h-screen flex items-center justify-center">
+                          <div className="text-center">
+                            <h1 className="text-4xl font-bold text-white mb-4">Premium Content</h1>
+                            <p className="text-gray-400">Welcome to exclusive QuantEdgeB content!</p>
+                          </div>
+                        </div>
+                      </ProtectedRoute>
+                    } />
+                  </Routes>
+                  <Footer />
+                  <BackToTop />
+                </div>
+              } />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 
