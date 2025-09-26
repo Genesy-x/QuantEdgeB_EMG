@@ -116,31 +116,8 @@ export const DashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Verification Section */}
-        {!user.whopVerified && (
-          <div className="bg-gradient-to-r from-blue-900/20 to-blue-800/20 border border-blue-700/50 rounded-xl p-6 mb-8">
-            <h3 className="text-xl font-semibold text-white mb-4">Unlock Premium Features</h3>
-            <p className="text-blue-200 mb-6">
-              Already have a Whop subscription? Verify your email to get premium access to all QuantEdgeB tools and content.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/dashboard/verify-whop">
-                <Button variant="default" className="w-full sm:w-auto">
-                  Verify Whop Subscription
-                </Button>
-              </Link>
-              <a 
-                href="https://whop.com/quantedgeb-premium/?a=quantedge17"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="ghost" className="w-full sm:w-auto border border-blue-500 text-blue-400 hover:bg-blue-900/20">
-                  Get Premium Access
-                </Button>
-              </a>
-            </div>
-          </div>
-        )}
+        {/* Whop Connection Section */}
+        <WhopConnect />
 
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
