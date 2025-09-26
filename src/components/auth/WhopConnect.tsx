@@ -99,7 +99,7 @@ export const WhopConnect: React.FC = () => {
             rel="noopener noreferrer"
             className="block w-full text-center bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-3 px-6 rounded-lg transition-colors"
           >
-            Get Premium Access
+            Get Alpha Access
           </a>
         </div>
       </div>
